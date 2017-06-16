@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>table</title>
+</head>
+
+<body>
+    <!-- <table border="1" width="800px">
+        <tbody>
+            <tr>
+                <td>1,1</td>
+                <td>1,2</td>
+            </tr>
+            <tr>
+                <td>2,1</td>
+                <td>2,2</td>
+            </tr>
+        </tbody>
+    </table> -->
+    <script type="text/javascript">
+ //    //1、创建表格
+ //    var table = document.createElement("table");
+ //    table.border=1;
+ //    table.width="800px";
+ //    //2、创建tbody
+ //    var tbody =document.createElement("tbody");
+ //    table.appendChild(tbody);
+ //    //3、创建第一行行
+ //    var tr1=document.createElement("tr");
+ //    tbody.appendChild(tr1);
+	// var td1=document.createElement("td");
+	// var td2=document.createElement("td");
+	// td1.appendChild(document.createTextNode("1,1"));
+	// td2.appendChild(document.createTextNode("1,2"));
+ //    tr1.appendChild(td1);
+ //    tr1.appendChild(td2);
+ //    //创建第二行
+ //    var tr2=document.createElement("tr");
+ //    tbody.appendChild(tr2);
+	// var td3=document.createElement("td");
+	// var td4=document.createElement("td");
+	// td3.appendChild(document.createTextNode("2,1"));
+	// td4.appendChild(document.createTextNode("2,2"));
+ //    tr2.appendChild(td3);
+ //    tr2.appendChild(td4);
+ //    //5、把表格附加到body
+ //    document.body.appendChild(table);
+
+ 	//1、创建表格
+    var table = document.createElement("table");
+    table.border=1;
+    table.width="800px";
+    //2、创建tbody
+    var tbody =document.createElement("tbody");
+    table.appendChild(tbody);
+    //3、创建第一行
+    tbody.insertRow(0);
+    tbody.rows[0].insertCell(0);
+    tbody.rows[0].cells[0].appendChild(document.createTextNode("1,1"));
+    tbody.rows[0].insertCell(1);
+    tbody.rows[0].cells[1].appendChild(document.createTextNode("1,2"));
+    //创建第二行
+    tbody.insertRow(1);
+    tbody.rows[1].insertCell(0);
+    tbody.rows[1].cells[0].appendChild(document.createTextNode("2,1"));
+    tbody.rows[1].insertCell(1);
+    tbody.rows[1].cells[1].appendChild(document.createTextNode("2,2"));
+
+ 	//4、附加到body
+ 	document.body.appendChild(table);
+
+
+    </script>
+</body>
+
+</html>

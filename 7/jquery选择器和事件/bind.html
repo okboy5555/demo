@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>bind</title>
+    <script type="text/javascript" src="../jquery文件/jquery-3.2.0.min.js"></script>
+</head>
+
+<body>
+    <button id="clickMeBtn">click me</button>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#clickMeBtn').on('click',click1);//bind
+            $('#clickMeBtn').on('click',click2);
+            $('#clickMeBtn').off('click',click1);//解除事件绑定 unbind
+        });
+        function click1(e){
+            console.log("click1");
+        }
+        function click2(e){
+            console.log("click2");
+        }
+    </script>
+</body>
+
+</html>

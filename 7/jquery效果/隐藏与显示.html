@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>隐藏与显示</title>
+    <script type="text/javascript" src="../jquery文件/jquery-3.2.0.min.js"></script>
+    <style type="text/css">
+	div{
+		background: yellow;
+		width: 30px;
+		height: 30px;
+		margin:2px;
+		float: left;
+	}
+    </style>
+</head>
+
+<body>
+    <p>hello</p>
+    <button id="hide">隐藏</button>
+    <button id="show">显示</button>
+    <button id="toggle">隐藏/显示</button>
+    <script type="text/javascript">
+    $(document).ready(function(){
+    	$('#hide').click(function(){
+    		$('p').hide(1000);//1000毫秒
+    	});
+    	$('#show').click(function(){
+    		$('p').show(1000);
+    	});
+    	$('#toggle').click(function(){
+    		$('p').toggle(1000);
+    	});
+    	for(var i=0;i<5;i++){
+    		$('<div>').appendTo(document.body);
+    	}
+    	$('div').click(function(){
+    		$(this).hide(2000,function(){
+                $(this).remove();
+            });
+    	});
+    });
+    </script>
+</body>
+
+</html>

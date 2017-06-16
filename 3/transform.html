@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>transform</title>
+    <style type="text/css">
+    .outer {
+        width: 100px;
+        height: 100px;
+        background: orange;
+        border:5px solid red;
+        transform: rotate(10deg);
+        transform-origin: left top;
+    }
+    .inner{
+    	height: 100%;
+    	background: gray;
+    	transform: translate(20px,20px) scale(1.2) skew(-5deg,-5deg);
+    }
+    .mytransition{
+    	width: 200px;
+    	height: 200px;
+    	background: gray;
+    	margin-top: 100px;
+
+    	transition-property: all;
+    	transition-duration: .5s;
+    	transition-timing-function: ease-in;
+    	transition-delay: .1s;
+
+
+    }
+    .mytransition:hover{
+    	background: orange;
+    	width: 250px;
+    	height: 250px;
+    }
+
+    .a1{
+    	
+    	transform:translate(55px);
+
+    	animation:animations 2s ease-out;
+    	animation-iteration-count: infinite;
+    }
+    @keyframes animations{
+    	0%{transform:translate(0);opacity: 0;}
+    	50%{transform:translate(30px);opacity: 1;}
+    	70%{transform:translate(35px);opacity: 1;}
+    	100%{transform:translate(60px);opacity: 0;}
+    }
+    span{
+    	opacity: 0;
+    	display: block;
+    	height: 50px;
+    	font:bold 14px/50px Georgia;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="outer">
+        <div class="inner">
+        测试
+        </div>
+    </div>
+    <div class="mytransition">
+    <span class="a1">我是动画</span>
+
+    </div>
+
+</body>
+
+</html>

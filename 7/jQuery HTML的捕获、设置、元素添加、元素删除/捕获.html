@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>捕获</title>
+	<script type="text/javascript" src="../jquery文件/jquery-3.2.0.min.js"></script>
+</head>
+<body>
+	<p id="text">this is my p <a href="">这是一个a标签</a></p>
+	<button id="btn1">点击1</button>
+	<p><input type="text" id="it" value="jikexueyuan"></p>
+	<p><a href="https://www.baidu.com/" id="aid">百度</a></p>
+	<button id="btn2">点击2</button>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$("#btn1").click(function(){
+			alert("text:"+$("#text").text());//只能获取具体的内容
+		});
+	});
+	// $(document).ready(function(){
+	// 	$("#btn1").click(function(){
+	// 		alert("text:"+$("#text").html());
+	// 	});
+	// });
+	$(document).ready(function(){
+		$("#btn1").click(function(){
+			alert("text:"+$("#it").val());//val()方法获取value的值
+		});
+	});
+	$(document).ready(function(){
+		$("#btn2").click(function(){
+			alert("text:"+$("#aid").attr("href"));//attr()方法获取属性和值
+		});
+	});
+	</script>
+</body>
+</html>

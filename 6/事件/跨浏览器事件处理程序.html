@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>跨浏览器事件处理</title>
+</head>
+<body>
+<button id="myBtn">点击</button>
+<script type="text/javascript">
+var myBtn = document.getElementById("myBtn");
+function addHandler(){
+	if(myBtn.addEventListener){//IE9和其他绝大部分现代浏览器
+		myBtn.addEventListener("click",clickMe,false);
+	}
+	else if(myBtn.attachEvent){//IE 事件处理程序
+		myBtn.attachEvent("onclick",clickMe);
+	}else{
+		myBtn.onclick=clickMe;
+	}
+}
+function clickMe(){
+	alert("点击到我了!");
+}
+addHandler();
+</script>
+</body>
+</html>

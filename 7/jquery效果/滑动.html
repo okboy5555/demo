@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>滑动</title>
+    <script type="text/javascript" src="../jquery文件/jquery-3.2.0.min.js"></script>
+    <style>
+    #content,
+    #flipshow,
+    #fliphide,
+    #fliptoggle {
+        padding: 5px;
+        text-align: center;
+        background: yellow;
+        border: solid 1px black;
+    }
+    
+    #content {
+        padding: 50px;
+        display: none;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="flipshow">出现</div>
+    <div id="fliphide">隐藏</div>
+    <div id="fliptoggle">出现/隐藏</div>
+    <div id="content">hello world</div>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('#flipshow').click(function() {
+            $('#content').slideDown(1000);
+        });
+        $('#fliphide').click(function() {
+            $('#content').slideUp(1000);
+        });
+        $('#fliptoggle').click(function() {
+            $('#content').slideToggle(1000);
+        });
+    });
+    </script>
+</body>
+
+</html>

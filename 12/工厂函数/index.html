@@ -1,0 +1,19 @@
+<meta charset="utf-8"/>
+<script type="text/javascript">
+var gongchang = {};
+gongchang.chanyifu = function() {
+    this.gongren = 50;
+    //alert('this.gongren');
+}
+gongchang.chanxie = function() {
+    alert('chanxie');
+}
+gongchang.yunshu = function() {
+    alert('yunshu');
+}
+gongchang.changzhang = function(para) {
+    return new gongchang[para]();
+}
+var me = gongchang.changzhang('chanyifu');
+alert(me.gongren);
+</script>

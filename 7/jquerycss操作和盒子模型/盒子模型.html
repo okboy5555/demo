@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>盒子模型</title>
+	<script type="text/javascript" src="../jquery文件/jquery-3.2.0.min.js"></script>
+	<style>
+	#div{
+		width: 100px;
+		height: 100px;
+		margin:50px;
+		padding: 50px;
+		border:2px solid red;
+		background: grey;	
+	}
+	</style>
+</head>
+<body>
+<div id="div"></div>
+<script type="text/javascript">
+$(document).ready(function(){
+	alert($('#div').height());//不算padding
+	alert($('#div').innerHeight());//算padding,不算边框
+	alert($('#div').outerHeight());//算边框，不算外边框
+	alert($('#div').outerHeight(true));//算外边框
+});
+</script>
+</body>
+</html>

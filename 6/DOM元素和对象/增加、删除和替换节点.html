@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>DOM常用操作</title>
+</head>
+
+<body>
+    <div id="mydiv"><p>1</p>
+    <p>2</p>
+    <p>3</p>
+    </div>
+    <div id="mydiv2"><p>0</p>
+	<p>4</p>
+    </div>
+
+    <script type="text/javascript">
+    var p = document.createElement("p");
+    var txt = document.createTextNode("你好");
+    p.appendChild(txt); //追加子节点
+    var mydiv=document.getElementById("mydiv");
+    mydiv.appendChild(p);
+
+    var mydiv2 = document.getElementById("mydiv2");
+    var temp=mydiv2.cloneNode(true);//加了true克隆它的子节点
+    mydiv.appendChild(temp);
+
+    var node = mydiv2.firstChild;
+    mydiv.insertBefore(node,mydiv.childNodes[0]);//在mydiv的第一个子节点前插入mydiv2的第一个子节点
+
+    //删除节点 
+    //mydiv2.removeChild(node);
+
+    </script>
+</body>
+
+</html>

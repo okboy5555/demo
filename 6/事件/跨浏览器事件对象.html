@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>跨浏览器事件处理</title>
+</head>
+
+<body>
+    <button id="btn1">点击</button>
+    <script type="text/javascript">
+    //获取不同浏览器的event对象
+    function getEvent(event) {
+        return event ? event : window.event;
+    }
+    //获取目标对象
+    function getTarget(event) {
+        return event.target || event.srcElement;
+    }
+    //获取type -->event.type
+
+    //阻止默认行为
+    function preventDefault(event) {
+        if (event.preventDefault) {
+            event.preventDefault();
+        } else {
+            event.returnValue = false;
+        }
+    }
+    //阻止冒泡事件
+    function stopPropagation(event) {
+        if (event.stopPropagation) {
+            event.stopPropagation();
+        } else {
+            event.cancelBubbble = true;
+        }
+    }
+
+    var btn1= document.getElementById("btn1");
+    btn1.onclick=function(event){
+    	var event1=getEvent(event);
+    	alert(getTarget(event1));//事件类型
+    }
+    </script>
+</body>
+
+</html>

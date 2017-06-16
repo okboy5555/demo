@@ -1,0 +1,27 @@
+<script type="text/javascript">
+
+var xiaowang = (function(argument){
+	var xiaowangjia=function(message){
+		this.menling = message;
+
+	};
+	var men;
+	var info={
+		sendMessage:function(message){
+			if(!men){
+				men = new xiaowangjia(message);
+			};
+			return men;
+		}
+	};
+	return info;
+})();
+var xiaoli ={
+	callXiaowang:function(msg){
+		var _xw =xiaowang.sendMessage(msg);
+		alert(_xw.menling);
+		_xw=null;//等待垃圾回收
+	}
+};
+xiaoli.callXiaowang('didi');
+</script>

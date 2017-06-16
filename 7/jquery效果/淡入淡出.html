@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>淡入淡出</title>
+    <script type="text/javascript" src="../jquery文件/jquery-3.2.0.min.js"></script>
+</head>
+
+<body>
+    <button id="in">淡入</button>
+    <button id="out">淡出</button>
+    <button id="toggle">toggle</button>
+    <button id="to">fadeTo</button>
+    
+    <div id="div1" style="width:80px;height:80px;background-color:aqua;display:none;"></div>
+    <div id="div2" style="width:80px;height:80px;background-color:yellow;display:none;"></div>
+    <div id="div3" style="width:80px;height:80px;background-color:blue;display:none;"></div>
+    <!-- <button id="in">淡入</button> -->
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('#in').on('click', function() {
+            $('#div1').fadeIn(1000);
+            $('#div2').fadeIn(1000);
+            $('#div3').fadeIn(1000);
+        });
+        $('#out').on('click', function() {
+            $('#div1').fadeOut(1000);
+            $('#div2').fadeOut(1000);
+            $('#div3').fadeOut(1000);
+        });
+        $('#toggle').on('click', function() {
+            $('#div1').fadeToggle(1000);
+            $('#div2').fadeToggle(1000);
+            $('#div3').fadeToggle(1000);
+        });
+        $('#to').on('click', function() {
+            $('#div1').fadeTo(1000,0.5);
+            $('#div2').fadeTo(1000,0.7);
+            $('#div3').fadeTo(1000,0.3);
+        });//透明度效果 0透明 1不透明
+    });
+    </script>
+</body>
+
+</html>

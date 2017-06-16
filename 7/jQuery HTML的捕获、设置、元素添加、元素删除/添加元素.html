@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>添加元素</title>
+	<script type="text/javascript" src="../jquery文件/jquery-3.2.0.min.js"></script>
+</head>
+<body>
+	<p id="p1">hello</p>
+	<button id="btn1">点击</button>
+	<p id="p2">hello</p>
+	<button id="btn2">点击</button>
+	<button onclick="appendText()">点击</button>
+	<script type="text/javascript">
+	//append结尾插入内容
+	//prepend开头插入内容
+	//before结尾插入内容 会换行
+	//after开头插入内容	会换行
+	$(document).ready(function(){
+		$('#btn1').click(function(){
+			$('#p1').append(',this is my append');
+		});
+		$('#btn1').click(function(){
+			$('#p1').prepend('this is my append,');
+		});
+		$('#btn2').click(function(){
+			//$('#p2').before('hello');
+			$('#p2').after('hello');
+		});
+	});
+	function appendText(){
+		var text1="<p>添加1</p>";
+		var text2=$('<p></p>').text('添加2');
+		var text3=document.createElement('p');
+		text3.innerHTML="添加3";
+		$('body').append(text1,text2,text3);
+	}
+	</script>
+</body>
+</html>

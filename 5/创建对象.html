@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>对象</title>
+	<script type="text/javascript">
+	// 1|直接创建对象
+	var person = new Object();
+	person.name = "宝宝";
+	person.age = 3;
+
+	var person2 = {
+		name:"宝宝",age:3
+	};
+	
+
+	alert("姓名:"+ person.name +"年龄:" + person.age);
+	alert("姓名:"+ person2.name +"年龄:" + person2.age);
+	//alert("姓名:"+ person2["name"] +"年龄:" + person2["age"]);
+	
+	//2|使用对象构造器的方式：函数的方式
+	function person3(name,age,height){
+		this._name=name;
+		this._age=age;
+		this._height=height;
+		this.sleeping =sleep;
+		function sleep(){
+			alert("正在睡觉");
+		}
+	}
+
+
+
+	var myBrother = new person3("张三",23,182);
+	myBrother.sleeping();
+	var myBrother2 = new person3("李四",24,180);
+	alert(myBrother._name + myBrother._age+myBrother._height);
+
+	//3| for in 遍历对象属性
+	for(var temp in myBrother){
+		document.write(myBrother[temp]);
+	}
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

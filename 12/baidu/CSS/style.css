@@ -1,0 +1,21 @@
+.blank .skin{
+
+}
+.purple .skin{
+	color: #C764E0;
+}
+.blue .skin{
+	color: #6681EE;
+}
+.green .skin{
+	color: #17C717;
+}
+.green{
+	background: green;
+}
+.blue{
+	background: blue;
+}
+.purple{
+	background: purple;
+}

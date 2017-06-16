@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>IE事件处理</title>
+</head>
+<body>
+	<button id="myBtn">IEIE</button>
+	<script type="text/javascript">
+	var myBtn = document.getElementById("myBtn");
+	myBtn.attachEvent("onclick",my);
+	function my(){
+		alert("hello");
+	}
+	//myBtn.detachEvent("onclick",my);
+	</script>
+
+</body>
+</html>

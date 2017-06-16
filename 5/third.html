@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>third</title>
+</head>
+
+<body>
+
+	<a href="javascript:plus();">点击</a>
+	<button onclick="plus()">点击</button>
+	<!-- 调用plus函数 -->
+
+
+
+
+
+
+
+    <script type="text/javascript">
+    var arr = ['张三', '李四', '王五'];
+    for (var temp in arr) {
+        document.write(arr[temp]);
+    }
+    //for in 使用
+    
+
+    function sum(){
+    	var sum = 0;
+    	for(var temp in arguments){
+    		sum = sum + arguments[temp];
+    	}   alert(sum);
+    }
+    sum(1,2,3,4);
+
+    
+    
+    </script>
+</body>
+
+</html>

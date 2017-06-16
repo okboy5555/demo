@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>同级遍历</title>
+	<script type="text/javascript" src="../jquery文件/jquery-3.2.0.min.js"></script>
+	<style type="text/css">
+		.bd *{
+			display: block;
+			border:3px solid grey;
+			color: grey;
+			padding: 5px;
+			margin:15px;
+		}
+		
+	</style>
+</head>
+<body>
+<div class="bd">
+	<p>P</p>
+	<h2>H2</h2>
+	<h3>H3</h3>
+	<h4>H4</h4>
+	<h5>H5</h5>
+	<h6>H6</h6>
+</div>
+	<script type="text/javascript">
+	//next为向下  prev() preAll() preUntil()为向上寻找
+	$(document).ready(function(){
+		//$('h4').siblings().css({border:'3px solid #FF0000'});//修改同级的所有元素
+		//$('h4').next().css({border:'3px solid #FF0000'});//修改下一个元素
+		//$('h4').nextAll().css({border:'3px solid #FF0000'});//修改接下来的所有元素
+		//$('p').nextUntil('h6').css({border:'3px solid #FF0000'});//修改区间元素
+	});
+
+	</script>
+</body>
+</html>

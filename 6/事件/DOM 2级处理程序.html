@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>DOM 2级处理程序</title>
+</head>
+
+<body>
+<div id="myDiv">
+    <button id="myBtn">DOM2</button></div>
+    <script type="text/javascript">
+    var myBtn = document.getElementById("myBtn");
+    myBtn.addEventListener("click", function() {
+        alert(this.id);
+    }, false);
+    myBtn.addEventListener("click", sayHi, false);//false为冒泡处理，由内到外
+    function sayHi() {
+        alert("hello button");
+    }
+    //myBtn.removeEventListener("click",sayHi,false);//事件移除
+    
+    var myDiv =document.getElementById("myDiv");
+    myDiv.addEventListener("click",sayHiDiv,true);//事件捕获，由外到内
+    function sayHiDiv(){
+    	alert("hello div");
+    }
+    </script>
+</body>
+
+</html>

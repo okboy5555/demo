@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>only-child</title>
+    <style>
+
+    /*nth-child(n)  an+b
+    */
+    li{
+    	list-style: none;
+    }
+    li:nth-child(4n+1) {
+        background: #000000;
+    }
+    li:nth-child(4n+2) {
+        background: darkgreen;
+    }
+    li:nth-child(4n+3) {
+        background: yellow;
+    }
+     li:nth-child(4n) {
+        background: red;
+    }
+
+    /*only-child 只有一个子元素*/
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>111</li>
+        <li>222</li>
+        <li>333</li>
+        <li>444</li>
+        <li>111</li>
+        <li>111</li>
+        <li>111</li>
+        <li>111</li>
+        <li>111</li>
+        <li>111</li>
+        <li>111</li>
+        <li>111</li>
+        <li>111</li>
+    </ul>
+</body>
+
+</html>

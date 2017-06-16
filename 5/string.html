@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>string</title>
+	<script type="text/javascript">
+	var str = new String("Hello");
+	//var str ="Hello";
+	//alert(str.length); 长度
+	//alert(str.toUpperCase());全部改成大写
+	//alert(str.toLowerCase()); 全部改成小写
+
+
+	var msg = "你好,极客学院";
+	msg =msg.replace("极客学院","jikexueyuan");
+	document.write(msg);
+	//替换文本
+
+	var abc = "h,i,j,k,l,m,n";
+	var arr = abc.split(",");
+	for(var temp in arr){
+		document.write("<br>"+arr[temp]+"<br>");
+	}
+	//字符串分割
+	
+
+
+	var str1="小明";
+	var str2="你好！";
+	var str3="你吃了吗？";
+	var str4=str1.concat(str2,str3);
+	document.write(str4);
+	//字符串连接
+	
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

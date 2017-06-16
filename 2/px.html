@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>css基本单位</title>
+    <style type="text/css">
+    body {
+        font-family: STXihei;
+        color: green;
+        font-style: italic;
+        /*样式*/
+        font-weight: bold;
+        /*加粗*/
+    }
+    
+    .outer {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        display: inline-block;
+        /*在一行里面并且显示成块级元素能调整长宽*/
+        text-indent: 2em;
+        /*缩进*/
+        text-align: center;
+        /*居中*/
+        word-wrap: break-word;
+        /*使他换行*/
+    }
+    
+    .outer2 {
+		opacity: 0.8;/*透明度*/
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        overflow: hidden;
+        /*超出的部分隐藏*/
+        white-space: nowrap;
+        /*不让换行直到遇到br*/
+        text-overflow: ellipsis;
+        /*显示。。。*/
+		border: 10px solid blue;
+		/*让区域外面有一个10像素的框*/
+		border-radius: 10px;
+		/*让这个框框有圆角*/
+
+    }
+    
+    .test {
+        font-size: 2rem;
+        height: 100px;
+        width: 100px;
+        background-color: blue;
+    }
+    
+    ul li {
+        list-style: none;
+        /*设置列表格式*/
+    }
+
+    table{
+    	border-collapse:collapse; 
+    }
+    /*让表格的线合并*/
+    </style>
+</head>
+
+<body>
+    <!-- <div class="outer" style="display:inline;"> 块级元素转换成行内元素   -->
+    <div class="outer2	">
+        asdasdasdasdasdasdasasdasddasd</div>
+    <span class="test">我是span1</span>
+    <!-- <span  class="test2" style="display:block;"> 行内元素转化成块级元素-->
+    <span class="test2">
+		我是span2</span>
+    <ul>
+        <li>测试1</li>
+        <li>测试2</li>
+    </ul>
+    <ol>
+        <li>测试3</li>
+        <li>测试4</li>
+    </ol>
+    <table border="1"> 
+        <tr>
+            <td>xiaoming
+            </td>
+            <td>第一
+            </td>
+            </tr>
+            <tr>
+            <td>xiaowang
+            </td>
+            <td>第二
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>

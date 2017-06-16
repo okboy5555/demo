@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>计时</title>
+    <script type="text/javascript">
+    // var st;
+
+    // function start(){
+    //     st=setTimeout(function() {
+    //         alert("hello");
+    //     },3000); //单位毫秒 1000毫秒=1秒
+    // }
+    // function stop(){
+    // 	clearTimeout(st);//语法
+    // }
+    
+    var stint = null;
+    function start(){
+    	stint=setInterval(function(){
+    		var date = new Date();
+    		var str = date.toLocaleString();
+    		document.getElementById("clock").innerText = str;
+
+    	},1000);
+    }
+    function stop(){
+    	clearInterval(stint);
+    }
+    </script>
+</head>
+
+<body>
+时钟: <span id="clock"></span>
+<button onclick="start()">开始</button>
+<button onclick="stop()">终止</button>
+</body>
+
+</html>

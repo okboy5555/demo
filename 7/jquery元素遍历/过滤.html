@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script type="text/javascript" src="../jquery文件/jquery-3.2.0.min.js"></script>
+	<title>过滤</title>
+	<style type="text/css">
+
+	</style>
+</head>
+<body>
+<div>
+	<p class="ppp">111</p>
+</div>
+<div>
+	<p class="ppp">222</p>
+</div>
+<div>
+	<p>333</p>
+</div>
+<div>
+	<a href="">div4</a>
+</div>
+<script type="text/javascript">
+	$(document).ready(function(){
+		// $('div p').first().css('background-color','red');
+		// $('div p').last().css('background-color','blue');
+		//$('div p').eq(2).css('background-color','blue');
+		//$('div p').filter('p').css('background-color','blue');
+		$('div p').not('.ppp').css('background-color','blue');
+	});
+</script>
+	
+</body>
+</html>

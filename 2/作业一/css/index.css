@@ -1,0 +1,58 @@
+.con {
+    display: -webkit-flex;  /*盒子模型*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;     /*将盒子居中*/
+    width: 300px;
+    height: 300px;
+    flex-wrap: wrap;
+}
+
+.top {
+    width: 100px;
+    height: 100px;
+    background-color: green;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, .6); /*设置阴影*/
+}
+
+.left {
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, .6);
+}
+
+.img {
+    height: 100px;
+    width: 100px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, .6);
+    line-height: 100px;
+    text-align: center;/*水平居中*/
+}
+
+.img>img {
+    vertical-align: middle;/*垂直居中*/
+}
+
+.empty {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+}
+
+.right {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, .6);
+}
+
+.buttom {
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, .6);
+}

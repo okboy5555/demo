@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css.css" id="skin">
+</head>
+
+<body>
+    <P>请选择下面的下拉菜单测试换肤效果</P>
+    <a href=# onclick="changecss('css.css')">css.css</a>
+    <a href=# onclick="changecss('css1.css')">css1.css</a>
+    <a href=# onclick="changecss('css2.css')">css2.css</a>
+    <a href=# onclick="changecss('css3.css')">css3.css</a>
+    <br>
+    <span class="text1">111111111111111</span>
+    <span class="text2">222222222222222</span>
+    <br>
+    <script type="text/javascript">
+    function SetCookie(name, value) {
+        var argv = SetCookie.arguments;
+        var argc = SetCookie.arguments.length;
+        var expires = (2 < argc) ? argv[2] : null;
+        var path = (3 < argc) ? argv[3] : null;
+        var domain = (4 < argc) ? argv[4] : null;
+        var secure = (5 < argc) ? argv[5] : false;
+        document.cookie = name + "=" + escape(value) + ((expires == null) ? "" : ("; expires=" + expires.toGMTString())) + ((path == null) ? "" : ("; path=" + path)) + ((domain == null) ? "" : ("; domain=" + domain)) + ((secure == true) ? "; secure" : "");
+    }
+
+    function GetCookie(Name) {
+        var search = Name + "=";
+        var returnvalue = "";
+        if (document.cookie.length > 0) {
+            offset = document.cookie.indexOf(search);
+            if (offset != -1) {
+                offset += search.length;
+                end = document.cookie.indexOf(";", offset);
+                if (end == -1)
+                    end = document.cookie.length;
+                returnvalue = unescape(document.cookie.substring(offset, end));
+            }
+        }
+        return returnvalue;
+    }
+    var thisskin;
+    thisskin = GetCookie("nowskin");
+    if (thisskin != "")
+        skin.href = thisskin;
+    else
+        skin.href = "css.css";
+    
+    function changecss(url) {
+        if (url != "") {
+            skin.href = url;
+            var expdate = new Date();
+            expdate.setTime(expdate.getTime() + (24 * 60 * 60 * 1000 * 30));
+            //expdate=null;
+            //以下设置COOKIES时间为1年,自己随便设置该时间..
+            SetCookie("nowskin", url, expdate, "/", null, false);
+        }
+    }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>读取和改变HTML内容</title>
+</head>
+<body>
+	<div id="container">
+	<ul>
+	<li>1</li>
+	<li>2</li>
+	<li>3</li>
+	<li>4</li>
+	<li>5</li>
+	</ul>
+
+	</div>
+	<!-- <button onclick="output()">ppp</button> -->
+
+
+
+
+	<script type="text/javascript">
+	// function output(){
+	// document.write("<p>hello</p>");
+	// }
+	// alert(document.getElementById("container").innerHTML);
+	// alert(document.getElementById("container").outerHTML);//包括div
+
+	// document.getElementById("container").innerHTML="<p>hello</p>";
+	alert(document.getElementById("container").innerText);
+	document.getElementById("container").innerText="hello";
+	//使用innerText和outerText
+	</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>第一个javascript</title>
+    <script type="text/javascript">
+    // document.write("Hello!");
+    //alert("Hello");
+    function helloword(){
+    	
+    	var username = document.getElementById("username").value;
+    	// alert(username);
+    	 console.log(typeof username);//调试
+    }
+
+    var age = 18;
+    alert(typeof age);
+    alert(typeof(age.toString()));//转化成字符串
+    alert(typeof String(age));
+    </script>
+</head>
+
+<body>
+<form action="">
+<input type="text" id="username">
+<input type="button" value="提交" onclick="helloword()"></form>
+</body>
+
+</html>

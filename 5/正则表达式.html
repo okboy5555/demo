@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>正则表达式</title>
+	<script type="text/javascript">
+	var reg = new RegExp("hello","gi");//i修饰符：不区分大小写 g修饰符 全局的匹配查找 另外一种写法 var reg = /Hello/gi;
+	var str ="hi , Hello jikexueyuan , Hello world";
+	//document.write(reg.test(str));//查找是否有hello 返回true
+	document.write(reg.exec(str));//找指定的值，找到返回值，没找到返回null
+
+
+	var username="jackie!";
+	//4~20位,字母，数字，下划线
+	var regex =/^\w]{4,20}$/;AAAAAAAAAAAAAAAAAA
+	if(regex.test(username))
+	{
+		alert("可用");
+	}
+	else
+	{
+		alert("不可用");
+	}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

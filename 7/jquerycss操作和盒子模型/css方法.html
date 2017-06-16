@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css方法</title>
+	<script type="text/javascript" src="../jquery文件/jquery-3.2.0.min.js"></script>
+	<style type="text/css">
+	.style1{
+		width: 100px;
+		height: 100px;
+		background-color: blue;
+	}
+	.style2{
+		width: 100px;
+		height: 100px;
+		background-color: grey;
+	}
+	</style>
+</head>
+<body>
+	<div></div>
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+	//第一种
+	// $('div').css('width','100px');
+	// $('div').css('height','100px');
+	// $('div').css('background','yellow');
+	// 
+	// 第二种
+	// $('div').css({
+	// 	width:'100px',height:'100px',backgroundColor:'yellow'
+	// });
+	// 
+	// 第三种
+	$('div').addClass('style1');
+	$('div').click(function(){
+		// $(this).addClass('style2');
+		// $(this).removeClass('style1');//移除样式
+		$(this).toggleClass('style2');//来回切换
+	});
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>location对象</title>
+    <script type="text/javascript">
+    function assinNew(){
+        window.location.assign("https://www.baidu.com/");
+    }//载入
+    function reloadCur(){
+    	window.location.reload();
+    }//刷新
+    function replaceNew(){
+    	window.location.replace("https://www.baidu.com/")
+    }
+    function backPage(){
+    	window.history.back();
+    }
+    </script>
+</head>
+
+<body>
+第二页
+    <button onclick="assinNew()">assign重新载入新界面</button>
+     <button onclick="reloadCur()">刷新界面</button>
+     <button onclick="replaceNew()">replace替换界面</button>
+
+     <button onclick="backPage()">回退</button>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>操作HTML的CSS样式</title>
+    <style type="text/css">
+	header,article,footer{
+		font-size: 2em;
+		height: 200px;
+		text-align: center;
+	}
+	.skin-green{
+		background:green;
+		font-size: 3em;
+	}
+	.skin-yellow{
+		background: yellow;
+		font-size: 4em;
+	}
+    </style>
+</head>
+
+<body class="myclass">
+<!-- <button onclick="document.body.style.backgroundColor='green'">点击切换皮肤绿色</button>
+
+<button onclick="document.body.style.backgroundColor='yellow'">点击切换皮肤黄色</button> -->
+
+
+<button onclick="changeSkin('skin-green')">点击切换皮肤绿色</button>
+
+<button onclick="document.body.className='skin-yellow'">点击切换皮肤黄色</button>
+
+<header>导航栏</header>
+<article>正文</article>
+<footer>版权</footer>
+
+
+    <!-- <div id="myDiv">
+        hello world!
+    </div> -->
+
+    <script type="text/javascript">
+    //document.getElementById("myDiv").style.color="green";
+   function changeSkin(skin){
+   	document.body.className=skin;
+   }
+   
+
+    </script>
+   <!--  localstorage cookie技术保存皮肤 -->
+</body>
+
+</html>

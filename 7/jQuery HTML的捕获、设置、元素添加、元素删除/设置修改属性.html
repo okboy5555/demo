@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>设置</title>
+    <script type="text/javascript" src="../jquery文件/jquery-3.2.0.min.js"></script>
+</head>
+
+<body>
+    <p id="p1">Hello World</p>
+    <button id="btn1">点击</button>
+    <p id="p2">Hello World</p>
+    <button id="btn2">点击</button>
+    <input type="text" id="i3" value="hello">
+    <button id="btn3">点击3</button>
+    <a href="#" id="aid">最初#</a>
+    <button id="btn4">点击4</button>
+    <p id="p5">123123123</p>
+    <button id="btn5">点击5</button>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('#btn1').click(function() {
+            $('#p1').text('jikexueyuan');
+        });
+        $('#btn2').click(function() {
+            $('#p2').html('<a href="#">jikexueyuan</a>');
+        });
+        $('#btn3').click(function() {
+            $('#i3').val('jikexueyuan');
+        });
+        $('#btn4').click(function() {
+            // $('#aid').attr('href','https://www.baidu.com/');//修改单个属性
+            $('#aid').attr({
+                'href': 'https://www.baidu.com/',
+                'title': '现在是百度'
+            });
+            $('#aid').text('现在是百度');
+        });
+        $('#btn5').click(function() {
+            $('#p5').text(function(i,ot){
+            	return 'old:'+ot+' new:这是新的内容'+(i);
+            });
+        });
+
+    });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,111 @@
+@basis: #FFFFFF;
+@red: #FF0000;
+@white: #FFFFFF;
+@green: #29A329;
+content {
+    background: @basis;
+    position: absolute;
+    width: 400px;
+    height: 230px;
+    border: 1px solid #000000;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    .top {
+        position: absolute;
+        top: 10px;
+        background: @red;
+        width: 80px;
+        height: 40px;
+        color: @white;
+        font-size: 30px;
+        text-align: center;
+    }
+    .top_r {
+        position: absolute;
+        right: 10px;
+        font-size: 30px;
+        color: @green;
+        width: 140px;
+        height: 50px;
+    }
+    .time {
+        position: absolute;
+        width: 50px;
+        height: 40px;
+        font-size: 12px;
+    }
+    .time_start {
+        .time;
+        top: 50px;
+        left: 5px;
+    }
+    .time_end {
+        .time;
+        top: 50px;
+        left: 40px;
+    }
+    ul {
+        position: absolute;
+        top: 80px;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100px;
+        color: @white;
+        list-style: none;
+        background: @green;
+        /*定义flex伸缩盒*/
+        display: -webkit-flex;
+        display: flex;
+        /*设置伸缩盒的子元素向两端对齐*/
+        justify-content: space-between;
+        -webkit-justify-content: space-between;
+        -moz-justify-content: space-between;
+    }
+    ul li {
+        font-size: 11px;
+        /*固定宽度使文字强制换行竖直排列*/
+        width: 12px;
+        text-align: center;
+        height: 80px;
+        margin-top: 5px;
+        /*定义li的flex伸缩盒*/
+        display: -webkit-flex;
+        display: flex;
+        /*设置伸缩盒的子元素向两端对齐*/
+        justify-content: space-between;
+        -webkit-justify-content: space-between;
+        -moz-justify-content: space-between;
+        /*设置子元素的排列方向是竖直方向*/
+        flex-direction: column;
+        -webkit-flex-direction: column;
+        -moz-flex-direction: column;
+        /*即每个li的子元素span为竖直方向的两端对齐*/
+    }
+    .jiantou1 {
+        position: absolute;
+        bottom: 30px;
+        left: 10px;
+        width: 350px;
+        height: 10px;
+        background: @red;
+    }
+    .jiantou2 {
+        position: absolute;
+        bottom: 20px;
+        right:10px;
+        width: 0;
+        height: 0;
+        border-top: 15px solid transparent;
+        border-left: 30px solid @red;
+        border-bottom: 15px solid transparent;
+    }
+   	.piaojia{
+   		position:absolute;
+   		bottom:10px;
+   		left:35%;
+   	}
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>score</title>
+	<script type="text/javascript">
+
+ function calculate() {
+        var i = parseInt(document.getElementById("num").value); //定义一个变量i存放分数
+        var s;
+        if(i>=90&&i<=100)
+        	s=1;
+        else
+        	if(i>=80&&i<90)
+        		s=2;
+        	else
+        		if(i>=70&&i<80)
+        			s=3;
+        		else
+        			if(i>=60&&i<70)
+        				s=4;
+        			else
+        				if(i>=0&&i<60)
+        					s=5;
+        				else
+        					s="输入错误";
+        document.getElementById("sum").innerText=s;
+    }
+	</script>
+</head>
+<body>
+ 输入成绩=   <input type="text" id="num">
+   结果: <span id="sum" style="color:red; font-size:2em;"></span>
+    <button onclick="calculate()">计算几等生</button>
+    <!-- 传入i -->
+</body>
+</html>

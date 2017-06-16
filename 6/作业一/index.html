@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>简易计算器</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+
+<body>
+    <div id="calculator">
+        <div id="calcu-head">
+            <h6>计算器</h6></div>
+        <form name="calculator" action="" method="get">
+            <div id="calcu-screen">
+                <!--配置显示窗口，使用onfocus="this.blur();"避免键盘输入-->
+                <input type="text" name="numScreen" class="screen" value="0" onfocus="this.blur();" />
+            </div>
+            <div id="calcu-btn">
+                <ul>
+                    <!--配置按钮-->
+                    <li>7</li>
+                    <li>8</li>
+                    <li>9</li>
+                    <li class="tool">←</li>
+                    <li class="tool">C</li>
+                    <li>4</li>
+                    <li>5</li>
+                    <li>6</li>
+                    <li class="tool">×</li>
+                    <li class="tool">÷</li>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li class="tool">+</li>
+                    <li class="tool">-</li>
+                    <li>0</li>
+                    <li >00</li>
+                    <li >.</li>
+                    <li class="tool">%</li>
+                    <li class="tool">=</li>
+                    <li class="tool">sin</li>
+                    <li class="tool">cos</li>
+                    <li class="tool">tan</li>
+                    <li class="tool">cot</li>
+                    <li>制作</li>
+                </ul>
+            </div>
+        </form>
+        <span id="show"></span>
+    </div>
+    <script type="text/javascript" src="index.js"></script>
+</body>
+
+</html>

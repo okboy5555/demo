@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>面向对象编程</title>
+    <script type="text/javascript">
+    function people(color) {
+        this.eye = color;
+        this.header = '大头人';
+    }
+    people.prototype.single = function(){
+        alert(this.header + this.eye);
+    }
+    
+    // var t = new people();
+
+    function yellowman(color) {
+    	people.call(this,color);
+    }
+    yellowman.prototype = Object.create(people.prototype);
+    yellowman.prototype.a = 'aaa';
+    var p = new yellowman('blue');
+    p.single();
+    // console.log(t);
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

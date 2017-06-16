@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DOM 0级事件处理程序</title>
+</head>
+<body>
+<button id="btnDom0">点击4(DOM)</button>
+
+
+<script type="text/javascript">
+ var btnDom0 = document.getElementById("btnDom0");
+ btnDom0.onclick =function(){
+ 	alert(this.id);
+ }
+ btnDom0.onclick =null;//删除DOM0级事件
+
+</script>
+	
+</body>
+</html>

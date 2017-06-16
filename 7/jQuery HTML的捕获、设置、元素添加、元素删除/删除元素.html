@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="../jquery文件/jquery-3.2.0.min.js"></script>
+    <title>删除元素</title>
+</head>
+
+<body>
+    <div id="div" style="height:200px;width:200px;border:1px solid red;">
+    1231313
+        <p id="p1">hello</p>
+    </div>
+    <button id="btn1">点击删除</button>
+    <script type="text/javascript">
+    //remove 全部删除  empty 删除里面的子元素
+    $(document).ready(function() {
+        $('#btn1').click(function() {
+            $('#div').remove();
+            //$('#div').empty();
+        });
+    });
+    </script>
+</body>
+
+</html>

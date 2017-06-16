@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>键盘事件</title>
+</head>
+<body>
+<input type="text"  onkeydown="keydownHandler()" onkeypress="keypressHandler()" onkeyup="keyupHandler()">
+<input type="text" onkeyup="keyCodeTest(event)">
+<script type="text/javascript">
+function keyCodeTest(event){
+	console.log(event.keyCode);
+	if(event.keyCode==13){//回车==13
+		alert("提交表单");
+	}
+}
+function keydownHandler(){
+	console.log("任意键盘按下");
+}
+function keypressHandler(){
+	console.log("字符按键按下");
+}
+function keyupHandler(){
+	alert("按键松开")
+}
+</script>
+</body>
+</html>

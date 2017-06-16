@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>事件对象</title>
+</head>
+
+<body>
+    <div id="myDiv">
+        <button id="btn1">点击</button>
+    </div>
+    <a href="https://www.baidu.com/" id="myLink">百度</a>
+    <script type="text/javascript">
+    var btn1 = document.getElementById("btn1");
+    // btn1.onclick=function(event){
+    // 	alert(event.type);
+    // }
+    btn1.addEventListener("click", function() {
+        alert(event.target.id);
+        event.stopPropagation();//阻止事件冒泡
+    }, false);
+
+    var myLink = document.getElementById("myLink");
+    myLink.onclick = function(event) {
+        alert("click");
+        event.preventDefault(); //取消默认行为
+    }
+
+    var myDiv = document.getElementById("myDiv");
+    myDiv.addEventListener("click", function() {
+        alert("div");
+    }, false);
+    </script>
+
+  <!--   target事件目标
+    type被触发的事件类型 -->
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>UI事件</title>
+</head>
+
+<body onunload="unloadPage()" onresize="resizePage()" onscroll="scrollPage()">
+    <img src="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png" alt="" id="img1">
+    <input type="text" name="" onselect="getSelect(this)">
+    <script type="text/javascript">
+    var img1 = document.getElementById("img1");
+    img1.onload = loadImgs;
+
+    function loadPage() {
+        alert("加载完毕");
+    }
+
+    function loadImgs() {
+        //alert("图片加载完毕");
+    }
+
+    function unloadPage() {
+        // 销毁资源
+        console.log("卸载完毕");
+    }
+
+    function getSelect(obj) {//当用户选择文本框时触发
+        alert(obj.value);
+         }//选中事件
+     
+    function resizePage(){//当窗口高度或宽度被调整时触发
+    	//alert("页面已经被调整");
+    }
+    function scrollPage(){
+    	alert(document.body.scrollTop);//当文档被滚动时触发
+    }
+    </script>
+</body>
+
+</html>

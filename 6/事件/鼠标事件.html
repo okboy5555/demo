@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>鼠标事件</title>
+</head>
+<body>
+<div id="div1" ondblclick="dbClickDiv(this)">Hello</div>
+<button onmouseover="change(this)" onmouseout="normal(this)">按钮</button><!-- 鼠标放在该元素上，鼠标不放在该元素上 -->
+<button onmouseup="changeBg(this,'yellow')" onmousedown="changeBg(this,'green')">按钮2</button><!-- 鼠标按住和鼠标松开 -->
+<script type="text/javascript">
+function changeBg(obj,cl){
+	obj.style.background=cl;
+}
+function dbClickDiv(obj){
+	obj.style.background="green";
+}
+function change(obj){
+	obj.style.border="2px solid green";
+}
+function normal(obj){
+	obj.style.border="0px";
+}
+
+</script>
+</body>
+</html>

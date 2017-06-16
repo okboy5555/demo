@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>event</title>
+    <script type="text/javascript" src="../jquery文件/jquery-3.2.0.min.js"></script>
+</head>
+
+<body>
+    <button id="ClickMyBtn">click me</button>
+    <script type="text/javascript">
+    $(document).ready(function(){
+    	$('#ClickMyBtn').click(function(){
+    		var e =jQuery.Event('MyEvent');
+    		$('#ClickMyBtn').trigger(e);
+    	});
+    	$('#ClickMyBtn').bind('MyEvent',function(event){
+    		console.log(event);
+    	});
+    });
+    </script>
+</body>
+
+</html>

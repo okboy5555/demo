@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>string2</title>
+	<script type="text/javascript">
+	//截取字符串
+	var str1 = "Hello xiaoming,Hello xiaohong";
+	document.write(str1.indexOf("xiao"));//返回6 从前查找
+	document.write(str1.lastIndexOf("xiao"));//返回21 从后查找
+
+	var str2 = str1.substring(6,14);//从6到14
+	document.write(str2);//截取xiaoming包括前面6不包括14
+
+	var str3 = str1.substr(6,8);
+	document.write(str3);//从6开始，8个长度
+
+	var msg = "   你   好，世  界   ";
+	document.write(msg.trim());//去掉两边的空格
+
+	
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

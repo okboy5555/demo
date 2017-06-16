@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>回调</title>
+	<script type="text/javascript" src="../jquery文件/jquery-3.2.0.min.js"></script>
+</head>
+<body>
+	<button>123123</button>
+	<p>hellohellohellohello</p>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$('button').click(function(){
+			// $('p').hide(1000,function(){
+			// 		alert('动画结束，这个方法称为回调');
+			// });
+			$('p').css('color','red').slideUp(1000).slideDown(1000);
+		});
+	});
+	</script>
+</body>
+</html>

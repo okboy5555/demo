@@ -1,0 +1,8 @@
+@charset "utf-8";
+/* CSS Document */
+*{padding:0;margin:0;}
+h2{color:#C60;}
+p{color:#C33;}
+.yellow{
+	background: yellow;
+}
