@@ -1,0 +1,3 @@
+# baidunews
+php百度新闻的移动端网页，分为多个板块及后台php+mysql做的后台新闻发布管理系统，并且对xss和csrf进行防御
+做了验证码及token的验证增加了安全性

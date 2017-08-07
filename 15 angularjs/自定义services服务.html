@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>自定义service</title>
+</head>
+
+<body ng-app="app">
+    <div ng-controller="MyCtrl">
+    	<h1>{{realname}}</h1>
+    	<h1>{{http}}</h1>
+    	<h1>{{data.msg}}</h1>
+    	 <h1>{{uname}}</h1>
+    </div>
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript">
+   		angular.module('app',[])
+   		.value('realname','zhaoliu')
+   		.value('realname','wangwu')
+   		.constant('http','www.baidu.com')
+   		.constant('http','www.souhu.com')
+   		.factory('Data',function(){
+   			return {
+   				msg:'你好啊',
+   				setMsg:function(){
+   					this.msg="我不好";
+   				}
+   			}
+   		})
+   		.service('User',function(){
+   			this.firstname= "喵喵";
+   			this.lastname="喵喵2";
+   			this.getName=function(){
+   				return this.firstname + this.lastname;
+   			}
+   		})
+   		.controller('MyCtrl',function($scope,realname,http,Data,User){
+   			$scope.msg="123";
+   			$scope.realname = realname;
+   			$scope.http = http;
+   			$scope.data = Data;
+   			Data.setMsg();
+   			$scope.uname = User.getName();
+   		})
+
+    </script>
+</body>
+
+</html>

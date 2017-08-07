@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>controller</title>
+</head>
+
+<body ng-app="app">
+    <div ng-controller="FirstCtrl"> 
+        <h1 ng-bind="msg"></h1>
+
+    </div>
+    <div ng-controller="NextCtrl"> 
+        <h1 ng-bind="msg"></h1>
+
+    </div>
+
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript">
+        angular.module('app',[])
+        .controller('FirstCtrl',function($scope){
+            $scope.msg="111"
+        })
+         .controller('NextCtrl',function($scope){
+            $scope.msg="222"
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,980 @@
+/*清除浮动*/
+.hide{
+    display: none;
+}
+.show{
+    display: block;
+}
+.cf::before,
+.cf::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    font-family: -apple-system, Helvetica, sans-serif;
+    line-height: 1.5;
+    font-size: 14px;
+    color: #333;
+    background-color: #eee;    
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+em, i {
+    font-style: normal;
+}
+/*空购物车*/
+.emptyContent {
+    position: relative;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 220px;
+    text-align: center;
+    background-color: #fff;
+    font-size: 12px;
+    padding-top: 1px;
+}
+
+.emptyContent i {
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin: 50px auto 30px;
+    font-size: 50px;
+    color: #aaa;
+}
+
+.mod_btns {
+    overflow: hidden;
+    margin: 15px 10px;
+    display: flex;
+}
+
+.mod_btns a {
+    display: block;
+    box-sizing: border-box;
+    width: 100px;
+    height: 44px;
+    line-height: 42px;
+    text-align: center;
+    font-size: 14px;
+    border-radius: 2px;
+    position: relative;
+    border: 1px solid #ddd;
+    color: #333;
+    background: #f3f3f3;
+    -webkit-box-flex: 1;
+    flex: 1;
+}
+
+.mod_btns a:last-child {
+    margin-left: 10px;
+}
+
+
+/*商品推荐*/
+
+.mod_recommend {
+    padding-bottom: 70px;
+    position: relative;
+    overflow: hidden;
+    margin: 15px 0;
+}
+
+.title {
+    position: relative;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+
+.title span{
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+}
+
+.title span:before,
+.title span:after {
+    content: '';
+    /*CSS伪类用法*/
+    position: absolute;
+    /*定位背景横线的位置*/
+    top: 50%;
+    background: #333;
+    /*宽和高做出来的背景横线*/
+    width: 15%;
+    height: 1px;
+    z-index: -1;
+}
+
+.title span:before {
+    left: 17.3%;
+    /*调整背景横线的左右距离*/
+}
+
+.title span:after {
+    right: 17.3%;
+}
+
+/*推荐商品*/
+.mod_recommend .list {
+    padding-right: 4px;
+    overflow: hidden;
+}
+
+.mod_recommend .list li{
+    float: left;
+    position: relative;
+    width: 50%;
+    padding-bottom: 7px;
+    background: #fff;
+    margin-top: 4px;
+}
+
+.mod_recommend .list .cover {
+    position: relative;
+    padding-top: 100%;
+    height: 0;
+    overflow: hidden;
+}
+
+.mod_recommend .list .cover img {
+    display: block;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.mod_recommend .list .name {
+    padding: 0 10px;
+    margin: 5px 0;
+    font-size: 12px;
+    color: #333;
+    line-height: 1.5em;
+    height: 3em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.mod_recommend .list .flex_wrap {
+    align-items: center;
+    height: 36px;
+}
+
+.mod_recommend .list div.price {
+    line-height: 30px;
+    padding-left: 10px;
+    font-size: 12px;
+    color: #e4393c;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: arial;
+}
+
+.mod_recommend .list .price em {
+    font-size: 14px;
+    font-style: normal;
+}
+
+.mod_recommend .list .buy {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 3px;
+    background-color: #f2f2f7;
+    font-size: 15px;
+    line-height: 30px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.mod_recommend .list li:nth-child(2n) {
+    float: right;
+    margin-right: -4px;
+}
+
+/*商品详细页*/
+.detail {
+    top: 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 301;
+    background-color: rgba(0,0,0,.7);
+}
+
+.main {
+    position: absolute;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    transition: transform .2s cubic-bezier(0,0,.25,1),-webkit-transform .2s cubic-bezier(0,0,.25,1);
+    bottom: 0;
+    width: 100%;
+    background-color: #fff;
+}
+
+.header {
+    height: 70px;
+    line-height: 1.5;
+    padding: 0 0 10px 110px;
+    background-color: #fff;
+    position: relative;
+    color: #333;
+}
+
+.header .avt {
+    position: absolute;
+    left: 10px;
+    top: -20px;
+    border-radius: 7px;
+    width: 90px;
+    height: 90px;
+    background-color: #fff;
+}
+
+.header .price {
+    height: 40px;
+    line-height: 40px;
+    color: #e4393c;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.header .price em {
+    font-size: 16px;
+    font-style: normal;
+}
+
+.header .prop {
+    word-break: break-all;
+    font-size: 12px;
+    color: #333;
+    line-height: 1.4em;
+    padding-right: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.header .prop span {
+    color: #999;
+}
+
+.header .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+}
+
+.header .close::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 17px;
+    height: 17px;
+    background: url('../images/关闭.png') no-repeat 1px 1px;
+    background-size: 15px;
+}
+
+ .body {
+    height: 270px;
+    overflow: auto;
+}
+
+.sku_kind {
+    font-size: 12px;
+    color: #333;
+    margin: 0 10px;
+    height: 33px;
+    line-height: 33px;
+}
+
+.sku_choose {
+    font-size: 12px;
+    overflow: hidden;
+    margin-bottom: -5px;
+}    
+
+.sku_choose .choice {
+    display: inline-block;
+    padding: 0 15px;
+    min-width: 20px;
+    max-width: 270px;
+    overflow: hidden;
+    height: 25px;
+    line-height: 25px;
+    float: left;
+    text-align: center;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    color: #333;
+    background-color: #f3f2f8;
+}
+
+.sku_choose .choice.active {
+    background-color: #e4393c;
+    color: #fff;
+}
+
+.count_choose {
+    padding: 10px 10px 15px;
+    font-size: 12px;
+    margin-bottom: 90px;
+}
+
+ .num_wrap_v2 {
+    position: relative;
+    z-index: 0;
+    width: 110px;
+    float: right;
+    vertical-align: middle;
+    display: flex;
+}
+
+.num_wrap .minus{
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    position: relative;
+    float: left;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid #d7d7d7;
+}
+
+.num_wrap_v2 span {
+    position: relative;
+    max-width: 30px;
+    min-width: 30px;
+    height: 30px;
+    line-height: 30px;
+    background: #f3f2f8;
+    text-align: center;
+}
+
+.btn,.num_wrap_v2 .text_wrap,.num_wrap_v2 span {
+    box-flex: 1;
+    display: block;
+    width: 100%;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+}
+
+.num_wrap_v2 span::after {
+    content: "";
+    display: block;
+    border: 1px solid #ddd;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    pointer-events: none;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border-color: #ccc;
+    bottom: -100%;
+    right: -100%;
+}
+
+.num_wrap_v2 .text_wrap {
+    position: relative;
+    z-index: 0;
+}
+
+.num_wrap_v2 .text_wrap::before {
+    content: "";
+    height: 0;
+    display: block;
+    border-bottom: 1px solid #ddd;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+.num_wrap_v2 .text {
+    height: 30px;
+    width: 100%;
+    color: #333;
+    background: #fff;
+    font-size: 12px;
+    text-align: center;
+    border: none;
+}
+
+.header:after,.num_wrap_v2 .text_wrap:after {
+    content: "";
+    height: 0;
+    display: block;
+    border-bottom: 1px solid #ddd;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.num_wrap_v2 span .row {
+    border-radius: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -7px;
+    margin-top: -1px;
+    width: 14px;
+    height: 2px;
+    background-color: #666;
+}
+
+.num_wrap_v2 span .col {
+    border-radius: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -1px;
+    margin-top: -7px;
+    width: 2px;
+    height: 14px;
+    background-color: #666;
+}
+
+.num_wrap_v2 span:after {
+    content: "";
+    display: block;
+    border: 1px solid #ddd;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    pointer-events: none;
+}
+
+ .count {
+    color: #333;
+    height: 31px;
+    line-height: 31px;
+}
+
+.btns.show {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    width: 100%;
+}
+
+.btn.red {
+    background-color: #e4393c;
+}
+.btn {
+    height: 50px;
+    line-height: 50px;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+}
+
+/*添加成功提示*/
+.sku_tip {
+    margin-left: -38px;
+    padding: 5px 10px;
+    background: rgba(0,0,0,.7);
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 110;
+    border-radius: 4px;
+    box-shadow: 0 0 3px 3px hsla(0,0%,59%,.7);
+}
+
+/*点击商品详细页的立即购买按钮出现的购物车界面*/
+.address_bar_warp {
+    position: relative;
+    height: 45px;
+    margin-bottom: 0px;
+    font-size: 12px;
+    color: #333;
+}
+
+.address_bar {
+    z-index: 11;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    padding: 0 10px;
+    height: 45px;
+    margin-bottom: -1px;
+    line-height: 45px;
+    font-size: 16px;
+    background: #f2f2f7;
+}
+
+.address_bar .address {
+    position: relative;
+    display: block;
+    color: #666;
+    max-width: 30%;
+    margin-right: 20px;
+    white-space: nowrap;
+    overflow: visible;
+    font-size: 14px;
+}
+
+.wrapper{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -15px 0 0 -38px;
+    display: block;
+    height: 30px;
+    background: #fff;
+    line-height: 30px;
+    font-size: 12px;
+    padding: 0 22px 0 5px;
+    border-radius: 2px;
+}
+
+.address_bar .wrap_btn {
+    position: absolute;
+    display: block;
+    padding: 0 10px;
+    right: 0;
+    top: 0;
+    font-size: 14px;
+    color: #3985ff;
+}
+
+.list{
+    position: relative;
+    margin-bottom: 15px;
+    background: #fff;
+    overflow: hidden;
+    width: 100%;
+}
+
+.list::before,.list::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+    background-color: #ccc;
+    height: 1px;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+.head_wrap {
+    min-height: 45px;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 10px 10px 10px 42px;
+    min-height: 45px;
+    z-index: 1;
+}
+
+.icon_select {
+    position: absolute;
+    top: 30%;
+    left: 5%;
+    display: block;
+    z-index: 1;
+    color: #16c460;
+}
+
+.icon_jd{
+    width: 16px;
+    height: 15px;
+    margin-right: 5px;
+    margin-top: -8px;
+    color: #666;
+}
+
+.item {
+    position: relative;
+    overflow: hidden;
+    background: #fff;
+}
+
+.item:not(:last-child):before {
+    border-color: #ddd;
+    z-index: 2;
+}
+
+.goods_wrap {
+    position: relative;
+}
+
+.goods {
+    z-index: 1;
+    position: relative;
+    min-height: 75px;
+    padding: 15px 10px 15px 128px;
+    background: #fff;
+    -webkit-overflow-scrolling: touch;
+}
+
+.goods .image {
+    position: absolute;
+    left: 43px;
+    top: 15px;
+    display: block;
+    width: 75px;
+    height: 75px;
+}
+
+.goods .name {
+    height: 36px;
+}
+
+.goods .sku {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    position: relative;
+    background-color: #fff;
+    font-size: 12px;
+    color: #666;
+    margin: 7px 0;
+    padding: 6px 25px 6px 5px;
+    border-radius: 2px;
+}
+
+.goods .price {
+    color: #e4393c;
+    font-size: 10px;
+}
+
+.goods .sku:after {
+    content: "";
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-top: 1px solid #666;
+    border-left: 1px solid #666;
+    -webkit-transform-origin: 50%;
+    transform-origin: 50%;
+    -webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+    position: absolute;
+    top: 50%;
+    right: 6px;
+    margin-top: -7px;
+}
+
+.goods .price .int {
+    font-size: 14px;
+}
+
+.goods .weight {
+    color: #999;
+    font-size: 10px;
+}
+
+.goods .num_and_more {
+    margin-top: 5px;
+    overflow: hidden;
+}
+.num_wrap {
+    position: relative;
+    display: block;
+    width: 100px;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.num_wrap input, .num_wrap span {
+    position: relative;
+    float: left;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background-color: #fff;
+}
+
+
+.num_wrap .input_wrap {
+    float: left;
+    position: relative;
+}
+
+.num_wrap .input_wrap:before {
+    border-color: #ccc;
+    z-index: 1;
+}
+
+.num_wrap .num {
+    -webkit-appearance: none;
+    border-radius: 0;
+    width: 40px;
+    height: 30px;
+    line-height: normal;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    font-size: 12px;
+    background: #fff;
+    text-align: center;
+}
+
+.num_wrap .input_wrap:after {
+    border-color: #ccc;
+}
+
+.num_wrap .plus {
+    float: right;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid #d7d7d7;
+}
+}
+.num_wrap input, .num_wrap span {
+    position: relative;
+    float: left;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.item_connect .goods.goods_last~.additional_area, .item_connect .goods.goods_last~.service_link {
+    position: relative;
+    z-index: 1;
+    background-color: #fff;
+}
+
+.additional_area {
+    padding: 0 10px 10px 35px;
+    font-size: 12px;
+    color: #666;
+}
+
+.additional_area .kind {
+    position: relative;
+    padding-left: 45px;
+    background-color: #fff9f9;
+}
+
+.additional_area .name {
+    position: absolute;
+    left: 10px;
+    top: 0;
+    width: 24px;
+    height: 13px;
+    line-height: 13px;
+    text-align: center;
+    font-size: 10px;
+    color: #e4393c;
+        border-radius: 2px;
+    border: 1px solid #e4393c;
+}
+
+.additional_area .stuff.clickable {
+    padding-right: 52px;
+}
+
+.additional_area .stuff .des, .address_bar .address em, .select_list .name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.additional_area .group.clickable:after, .additional_area .stuff.clickable:after {
+    content: "";
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-top: 1px solid #666;
+    border-left: 1px solid #666;
+    -webkit-transform-origin: 50%;
+    transform-origin: 50%;
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+    position: absolute;
+    top: 50%;
+    margin-top: -5px;
+    right: 12px;
+}
+
+/*底部按钮*/
+.fixBar {
+    z-index: 100;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 50px;
+    background: hsla(0,0%,100%,.95);
+    color: #333;
+    font-size: 14px;
+}
+
+.fixBar:before {
+    border-color: #ddd;
+}
+
+.fixBar .icon_select {
+    width: 25px;
+    height: 15px;
+    display: block;
+    position: absolute;
+    top: 5px;
+    text-align: center;
+}
+
+.fixBar .icon_select:after {
+    content: "全选";
+    width: 41px;
+    padding-top: 30px;
+    font-size: 10px;
+    text-align: center;
+    height: 1em;
+    line-height: 1em;
+    top: -4px;
+    position: absolute;
+    left: -30%;
+}
+.fixBar .total {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.fixBar .total p {
+    padding-top: 10px;
+    font-weight: 700;
+    line-height: 1em;
+    height: 50px;
+    text-align: right;
+    float: left;
+    font-size: 16px;
+}
+
+.fixBar .total strong {
+    color: #e4393c;
+}
+
+.fixBar .total small {
+    padding-top: 2px;
+    display: block;
+    font-size: 10px;
+    color: #666;
+    font-weight: 400;
+}
+
+.fixBar .total .buy.disabled, .fixBar .total>a.disabled {
+    cursor: default;
+    color: #999;
+    background: #d7d7d7;
+}
+ 
+.fixBar .total .buy, .fixBar .total>a {
+    float: right;
+    display: block;
+    width: 100px;
+    height: 50px;
+    margin-left: 10px;
+    line-height: 50px;
+    font-size: 16px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.fixBar .total .buy, .fixBar .total>a {
+    background: #e4393c;
+    color: #fff;
+}
+
+.fixBar .total .buy em, .fixBar .total>a em {
+    font-weight: 400;
+    font-size: 12px;
+    font-family: none;
+}
+
+.fixBar .btns {
+    position: absolute;
+    right: 10px;
+    top: 12px;
+}
+
+.fixBar .btns .btn_1, .fixBar .btns_share .btn_1 {
+    background: #3884ff;
+    color: #fff;
+}
+ 
+.fixBar .btns a {
+    display: inline-block;
+    margin-left: 5px;
+    width: 69px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: #fff;
+    font-size: 12px;
+    background: #666;
+    border-radius: 2px;
+}
+
+.fixBar .btns .btn_2, .fixBar .btns_share .btn_2 {
+    background: #666;
+    color: #fff;
+}
+
+.fixBar .btns .btn_3, .fixBar .btns_share .btn_3 {
+    background: #f19325;
+    color: #fff;
+}

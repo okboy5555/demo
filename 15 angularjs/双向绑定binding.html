@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>双向绑定</title>
+</head>
+
+<body ng-app="">
+    <div>
+        <input type="text" name="" ng-model="uname">
+        <h1>{{2+2}}</h1>
+        <div>{{'用户名:'+uname}}</div>
+    </div>
+    <div ng-bind="'用户名:'+uname"></div>
+    <div class="{{uname}}">{{uname}}</div>
+    <h1 ng-clock class="ng-clock">{{uname}}</h1>
+    <script type="text/javascript" src='./js/angular.min.js'></script>
+    <script type="text/javascript">
+    </script>
+</body>
+
+</html>

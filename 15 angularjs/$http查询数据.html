@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>$http查询数据库数据</title>
+</head>
+
+<body ng-app="app">
+    <div ng-controller="MyCtrl">
+    	<input type="text" ng-model="msg">
+		<h1>{{msg}}</h1>
+    </div>
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript">
+    angular.module('', [])
+        .controller('MyCtrl', function($scope,$http) {
+        	$http.post('json.txt')
+            .success(function(resp){
+                console.log(resp);
+            })
+        });
+    </script>
+</body>
+
+</html>

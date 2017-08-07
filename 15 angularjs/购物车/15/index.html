@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>购物车</title>
+  <link rel="stylesheet" type="text/style" href="./css/reset.css">
+  <link rel="stylesheet" href="./font/iconfont.css">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body ng-app="myApp">
+  <content ng-controller="cartController">
+    <!--购物车为空-->
+    <div class="emptyContent" ng-show="!buy.length">
+      <i class="iconfont">&#xe606;</i>
+      <p>您的购物车内还没有商品！</p>
+      <div class="mod_btns">
+        <a href="#">个人中心</a>
+        <a href="#">立即逛逛</a>
+      </div>
+    </div>
+            <!--点击商品详细页的立即购买按钮出现的添加成功提示-->
+       <!--  <div class="sku_tip hide" ng-show="buy.length">
+            <span>添加成功</span>
+        </div> -->
+        <!--点击商品详细页的立即购买按钮出现的购物车界面-->
+        <div class="address_bar_warp" ng-show="buy.length">
+            <div class="address_bar">
+                <a href="#" class="address iconfont">&#xe635; <em>深圳市南山区</em></a>
+                <div class="wrapper iconfont">全部商品 &#xe637;</div>
+                <span class="wrap_btn" ng-click="btnFlag=!btnFlag"><span>编辑</span></span>
+            </div>
+        </div>
+        <div class="list" ng-show="buy.length">
+            <div class="head_wrap">
+                <i class="icon_select iconfont">&#xe616;</i>
+                <i class="icon_jd iconfont">&#xe600;</i>
+                <span class="title">京东自营</span>
+            </div>
+            <div class="item">
+                <div class="goods_wrap">
+                    <div class="goods  goods_last" ng-repeat="good in buy">
+                        <div class="icon_select iconfont" ng-click="actions.remove(good.id)">&#xe616;</div>
+                        <a href="#" class="link">
+                            <img class="image" width="80" height="80" alt="" src="{{good.img}}">
+                        </a>
+                        <div class="content">
+                            <div class="name"> {{good.name}} </div>
+                            <p class="sku">规格：{{good.prop}}</p>
+                            <p class="price">¥ <em class="int">{{good.price}}</em>.00 &nbsp;&nbsp;<span class="weight">{{good.weight}}</span> </p>
+                            <div class="num_and_more">
+                                <div class="num_wrap">
+                                    <button class="minus" type="button" ng-click="actions.reduce(good.id)">-</button>
+                                    <input class="num" type="tel" value="{{good.quantity}}" ng-model="good.quantity">
+                                    <button class="plus" type="button" ng-click="actions.add(good.id)">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="additional_area">
+                        <div class="kind service_yb">
+                            <div class="name">服务</div>
+                            <div class="stuff has_price clickable">
+                                <div class="des">选择增值服务(包含礼品服务)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--底部按钮-->
+        <div class="fixBar" ng-show="buy.length">
+            <i class="icon_select iconfont">&#xe616;</i>
+            <div class="total" ng-show="!btnFlag">
+                <p>总计：<strong>¥ {{actions.totalPrice()}} .00</strong><small>(不含运费，已优惠<span>¥0.00</span>)</small></p>
+                <a href="javascript:;" class="btn_pay" ng-class="{disabled:!buy.length}">去结算<em>( {{actions.totalQuantity()}} 件)</em></a>
+            </div>
+            <div class="btns" ng-show="btnFlag">
+                <a href="javascript:;" class="btn_1">分享</a>
+                <a href="javascript:;" class="btn_2">移至收藏</a>
+                <a href="javascript:;" class="btn_3" ng-click="buy=[]">清空</a>
+            </div>
+        </div>
+    <!--一直存在的推荐商品-->
+    <div class="mod_recommend">
+      <h3 class="title">
+        <span class="iconfont">&#xe640; 你可能还想要</span>
+      </h3>
+      <ul class="list">
+        <li ng-repeat="item in cart" data-id="{{item.id}}">
+          <div class="cover">
+            <img src="{{item.img}}" alt="">
+          </div>
+          <p class="name">{{item.name}}</p>
+          <div class="flex_wrap">
+            <div class="price">￥<em>{{item.price}}</em>.00</div>
+          </div>
+          <div class="iconfont buy" ng-click="actions.purches(item.id)">&#x343f;</div>
+        </li>
+      </ul>
+    </div>
+  </content>
+  <script src="./js/angular/angular.js"></script>
+  <script src="./js/app.js"></script>
+</body>
+
+</html>

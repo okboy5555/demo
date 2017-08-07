@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ng-repeat</title>
+</head>
+
+<body ng-app="app">
+    <div ng-controller="MyCtrl">
+    <ul>
+        <li ng-repeat="a in list " >
+            <h4>{{$index+1+'.'+a.address+$first+$last}}</h4>
+                
+        </li>
+    </ul>
+        
+    </div>
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript">
+    angular.module('app', [])
+        .controller('MyCtrl', function($scope) {
+            $scope.list = [{
+                id: 1,
+                address: '11111'
+            }, {
+                id: 2,
+                address: '22222'
+            }, {
+                id: 3,
+                address: '3333'
+            }, {
+                id: 4,
+                address: '4444'
+            }];
+        });
+    </script>
+</body>
+
+</html>

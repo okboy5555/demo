@@ -1,0 +1,226 @@
+/*reset*/
+body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,div,dl,dt,dd,input{margin:0;padding:0;}
+body{font-size:12px;}
+img{border:none;}
+li{list-style:none;}
+input,select,textarea{outline:none;}
+textarea{resize:none;}
+a{text-decoration:none;}
+
+.widthComm{width:650px;}
+.ML30{ margin-left:30px;}
+/*浮动*/
+.clearfix:after{content:"";display:block;clear:both;}
+.clearfix{zoom:1;}
+
+.l{ float: left;}
+.r{ float: right;}
+
+
+.newsLogo{
+    position: relative;
+    min-width: 320px;
+    width:100%;
+    height: 44px;
+    z-index: 2;
+    background: #3e98f0 url(../images/bg-news-logo_344ce44.png) no-repeat;
+    background-position: center 6px;
+    background-size: 77px auto;
+    -webkit-background-size: 77px auto;
+    text-align: center;
+    font-weight: 400;
+    color: #fff;
+}
+.topLogo{
+    background-image: url(../images/bg-new-toolbar_6e9bc53.png);
+    background-size: 40px 500px;
+    -webkit-background-size: 40px 500px;
+    background-position: center 6px;
+    background-repeat: no-repeat;
+    width: 34px;
+    height: 44px;
+    font-size: 15px;
+    line-height: 44px;
+    display: block;
+    float:left;
+}
+.topMe{
+    background-image: url(../images/bg-new-toolbar_6e9bc53.png);
+    background-size: 40px 500px;
+    background-position: center -461px;
+    -webkit-background-size: 40px 500px;
+    background-repeat: no-repeat;
+    width: 34px;
+    height: 44px;
+    font-size: 15px;
+    line-height: 44px;
+    display: block;
+    float:left;
+}
+.topSearch{
+    background-image: url(../images/bg-new-toolbar_6e9bc53.png);
+    background-size: 40px 640px;
+    background-position: center -212px;
+    background-repeat: no-repeat;
+    width: 34px;
+    height: 44px;
+    font-size: 15px;
+    line-height: 44px;
+    display: block;
+    float:left;
+}
+.topPlus{
+    background-image: url(../images/bg-new-toolbar_6e9bc53.png);
+    background-position: center -140px;
+    -webkit-background-size: 40px 640px;
+    background-repeat: no-repeat;
+    width: 34px;
+    height: 44px;
+    font-size: 15px;
+    line-height: 44px;
+    display: block;
+    float:left;
+}
+nav{
+    border-top:1px solid #5dabf0;
+    overflow: hidden;
+    background: #3e98f0;
+}
+nav a{
+    display: block;
+    width:50%;
+    height: 33px;
+    line-height: 33px;
+    float: left;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+}
+article{
+    margin: 8px 2% 0;
+    overflow: hidden;
+}
+article .flashBox{
+    overflow: hidden;
+}
+article .flashBox ul{
+    width:6000px;
+    position: relative;
+}
+article .flashBox li{
+    display: block;
+    float: left;
+    position: relative;
+}
+.gTitle{
+    width: 100%;
+    height: 28px;
+    line-height: 28px;
+    font-size: 13px;
+    text-align: center;
+    overflow: hidden;
+    margin-top: 3px;
+    position: absolute;
+    bottom: 0;
+    color: #fff;
+    background-color: rgba(0,0,0,.8);
+}
+.gTitle p{
+    position: absolute;
+    font-weight: normal;
+}
+.flashPo{
+    width:100%;
+    background: #ccc;
+    height: 2px;
+}
+.flashPo span{
+    text-indent: -9999px;
+    display: block;
+    height:2px;
+    width:25%;
+    float: left;
+
+}
+.flashPo span.on{
+    background: #3e98f0;
+}
+.newsImg {
+    font-size: 0;
+    height: 68px;
+    vertical-align: middle;
+    width: 95px;
+    text-align: center;
+    overflow: hidden;
+    border: 1px solid #e8e8e8;
+    float: left;
+    margin-left: 0;
+    margin-right: 10px;
+    background-color: #F4F7F9;
+    position: relative;
+}
+.newsImg img {
+    height: 100%;
+    width: 100%;
+    vertical-align: middle;
+    float: left;
+}
+.newsDetail {
+    font-size: 16px;
+    line-height: 20px;
+    color: #262b31;
+    margin: -1px 0 4px 0;
+    float: left;
+    height: 68px;
+
+}
+.newsDetail p{
+    position: absolute;
+}
+.newsItem{
+    position: relative;
+    overflow: hidden;
+}
+.newsDate{
+    position: absolute;
+    bottom: 5px;
+    font-size: 12px;
+    color: #ccc;
+}
+.newsRemark{
+    position: absolute;
+    bottom: 5px;
+    right:5px;
+    border: 1px solid transparent;
+    font-style: normal;
+    float: right;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+    color: #fff;
+    padding: 1px 2px;
+    border-radius: 2px;
+    display: inline-block;
+    max-width: 100px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.newsRemark.wangyiMark,
+.newsRemark.sinaMark{
+    background-color: #e02f2f;
+}
+.newsRemark.youxuanMark{
+    background-color: #0da5fc;
+}
+.ui-refresh {
+    height: 36px;
+    line-height: 36px;
+    background-color: #f8f9fa;
+    text-align: center;
+    border: 1px solid #ebedef;
+    border-radius: 1px;
+    color: #545454;
+    margin: 14px 40px;
+}
