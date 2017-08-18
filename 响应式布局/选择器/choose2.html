@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>choose</title>
+    <style>
+    div *:not(h1) {
+        color: crimson;
+    }
+    /*除了h1*/
+
+
+    :empty{
+    	background: darkviolet;
+    }
+    /*没有内容的补分*/
+
+	:target{
+		background: orange;
+	}
+	/*页内跳转*/
+
+    </style>
+</head>
+
+<body>
+    <div>
+        <h2>123</h2>
+        <h1>123</h1>
+        <p>ppp</p>
+    </div>
+    <table border="1">
+        <tr>
+            <td>111</td>
+            <td>222</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>222</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>222</td>
+        </tr>
+    </table>
+
+
+    <br>
+
+
+    <a href="#a1">1</a>
+     <a href="#a2">2</a>
+     <a href="#a3">3</a>
+     <a href="#a4">4</a>
+     <div id="a1">
+		<h1>菜单1</h1>
+		<p>内容1</p>
+
+     </div>
+     <div id="a2">
+		<h1>菜单1</h1>
+		<p>内容1</p>
+
+     </div>
+     <div id="a3">
+		<h1>菜单1</h1>
+		<p>内容1</p>
+
+     </div>
+     <div id="a4">
+		<h1>菜单1</h1>
+		<p>内容1</p>
+
+     </div>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>position</title>
+    <style type="text/css">
+    div {
+        height: 100px;
+        width: 100px;
+    }
+    
+    .rel {
+        background-color: orange;
+        display: inline-block;
+        position: absolute;
+        left: 50px;
+        top: 50px;
+    }
+    
+    .abs {
+        background-color: green;
+        display: inline-block;
+        float: left;
+    }
+    
+    .abs1 {
+    	height: 100px;
+    	width: 100px;
+    	background-color: black;
+    	display: inline-block;
+    	float: left;
+    }
+    
+    .outer {
+        height: 300px;
+        width: 300px;
+        background-color: aquamarine;
+       	display: inline-block;
+       	position: relative;
+       	float: left;
+
+    }
+    .fix{
+    	position: fixed;
+    	width: 100px;
+    	height: 100px;
+    	background-color: orange;
+    	right:0;
+        top: 10;
+    }
+    </style>
+</head>
+
+<body>
+<div class="fix">我不动</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <div class="outer">
+        <div class="rel"></div>
+    </div>
+    <div class="abs"></div>
+    <div class="abs1"></div>
+</body>
+
+</html>

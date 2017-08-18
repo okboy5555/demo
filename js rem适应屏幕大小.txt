@@ -1,0 +1,1 @@
+(function() {　　 var newRem = function() {　　　　 var html = document.documentElement;//获得页面的根元素html　　　　 html.style.fontSize = html.getBoundingClientRect().width / 10 + 'px';//得到当前html的矩形宽度　　 };　　 window.addEventListener('resize', newRem, false);　　 newRem();　})();

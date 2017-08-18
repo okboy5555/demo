@@ -1,0 +1,44 @@
+ <style type="text/css">
+   /* table {
+        color: red !important;
+    }
+    */
+   #tableid {
+        color: orange;
+    }
+    
+    .test {
+        color: yellow;
+    }
+    
+    
+    .outer table,
+    .pp {
+        color: blue;
+    }
+    
+    input[type=text] {
+        color: green;
+    }
+    
+    #username_1 {
+        color: red;
+    }
+
+  a::before{
+  	content: '\f04';
+	color: red;
+  }
+  a::after{
+  	content: 'hello';
+  	color: green;
+  }
+  a:active{color: #0000FF;}
+  a:hover{color: #0000FF;}
+    /* 
+    
+     规则｛
+     属性：值
+     ｝
+     */
+    </style>

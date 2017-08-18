@@ -1,0 +1,65 @@
+*{
+	margin:0;
+	padding: 0;
+
+}
+/*头部*/
+.header{
+	background: #CCCCCC;
+	height: 100px;
+	margin-bottom: 10px;
+}
+/*中间*/
+.atricle{
+	background: white;
+	height: 600px;
+	overflow: hidden;
+/*	padding-left: 150px;
+	padding-right: 100px;*/
+}
+/*尾部*/
+.footer{
+	background: #CCCCCC;
+	height: 150px;
+	margin-top: 10px;
+}
+/*中间左侧*/
+.atricle .left{
+	background: #CCCCCC;
+	float: left;
+	
+	/*height: 16px;*/
+	margin-bottom: -9999px;
+	padding-bottom: 9999px;
+	width: 140px;
+	margin-left:-100%;
+/*	position: relative;
+	left: -150px;*/
+}
+/*中间右侧*/
+.atricle .right{
+	margin-bottom: -9999px;
+	padding-bottom: 9999px;
+	background: #CCCCCC;
+	float: left;
+	width: 140px;
+	height: 16px;
+	margin-left: -140px;
+/*	position: relative;
+	left: 100px;*/
+}
+/*中间*/
+.atricle .middle{
+
+	background: white;
+	float: left;
+	width: 100%;
+}
+/*中间内容*/
+.inner{
+	background: #CCCCCC;
+	margin-left:150px;
+	margin-right: 150px;
+	margin-bottom:-9999px;
+	padding-bottom: 9999px;
+}

@@ -1,0 +1,22 @@
+.left{
+	float: left;
+	width: 300px;
+	background-color: orange;
+}
+.right{
+	float: right;
+	width: 300px;
+	background-color: red;
+}
+.col{
+	-webkit-column-rule-style:dotted;
+	-webkit-column-count:2;
+}
+.center{
+	height: 300px;
+	width: 300px;
+	background-color: orange;
+	display: -webkit-box;
+	-webkit-box-pack:center;
+	-webkit-box-align:center;
+}

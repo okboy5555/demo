@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>选择子元素</title>
+    <style>
+    li:first-child{
+    	background: yellow;
+    }
+    li:last-child{
+    	background: blue;
+    }
+
+    /*nth-child(position)*/
+	li:nth-child(3){
+		background: firebrick;
+	}
+
+	li:nth-last-child(2){
+		background: green;
+	}
+	/*倒数第二个*/
+
+	li:nth-child(odd){
+	}
+	/*奇数*/
+	li:nth-child(even){
+	}
+	/*偶数*/
+
+    </style>
+</head>
+
+<body>
+    <h2>列表</h2>
+    <ul>
+        <li>列表1</li>
+        <li>
+            列表2</li>
+        <li>
+            列表3</li>
+        <li>
+            列表4</li>
+        <li>
+            列表5</li>
+        <li>
+            列表6</li>
+    </ul>
+</body>
+
+</html>

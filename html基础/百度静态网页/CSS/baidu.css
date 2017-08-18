@@ -1,0 +1,69 @@
+body{
+	font:12px arial;
+}
+
+header{
+	overflow: hidden;
+}
+header nav{
+	width:500px;
+	float:right;
+}
+
+header nav a{
+	margin-left:20px;
+	font-size: 13px;
+	line-height: 24px;
+	color: #333;
+	font-weight: 700;
+
+}
+/*header nav tags {
+	margin-left:20px;
+	font-size: 13px;
+	line-height: 24px;
+	color: #333;
+	text-decoration: underline;
+}*/
+
+/*header nav b{
+	padding: 10px;
+	width:100px;
+	height: 38px;
+	background-color: #38f;
+	color: white;
+	box-shadow: none;
+	border: 0px;
+
+}*/
+
+/*主体部分*/
+.content{
+	padding-top:150px;
+	text-align: center;
+}
+.content input{
+	width:540px;
+	height: 36px;
+}
+.content img{
+	width:270px;
+	height: 129px;
+}
+.content button{
+	width:100px;
+	height: 38px;
+	background-color: #38f;
+	color: white;
+	box-shadow: none;
+	border: 0px;
+}
+
+
+/*底部*/
+footer{
+	padding-top:400px;
+}
+footer p{
+	text-align: center;
+}

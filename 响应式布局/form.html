@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS美化表单</title>
+    <style type="text/css">
+    div {
+        width: 400px;
+        height: 400px;
+        background-color: orange;
+        background-image: url(bg1.jpg);
+        background-size: 300px 300px;
+        /*cover 平铺*/
+        background-repeat: no-repeat;
+    }
+    
+    a {
+        display: block;
+        height: 37px;
+        width: 110px;
+        margin-top: 10px;
+        background-color: green;
+        background-image: url(bg1.jpg);
+        background-size: no-repeat;
+        text-align: center;
+        line-height: 37px;
+        text-decoration: none;
+        font-weight: bolder;
+        color: coral;
+        padding-left:5px;
+    }
+    a span{
+    	display: block;
+    	height: 37px;
+    	background: green url(bg1.jpg) no-repeat right 0;
+    	padding-right: 5px;
+	
+    }
+    a span:hover{
+    	background-position: 0 -60px;
+    }
+    a:hover {
+        background-position: 0 -60px;
+    }
+
+
+    </style>
+</head>
+<body>
+    <div>
+    </div>
+    <a href="">
+		<span>
+		点我啊点我啊
+		</span>
+	</a>
+	<input type="radio" name="">
+</body>
+
+</html>
