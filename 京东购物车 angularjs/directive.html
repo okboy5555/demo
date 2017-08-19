@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>directive</title>
+</head>
+<body>
+	<div ng-app="app">
+		<!-- <hello></hello> -->
+		<div hello></div>
+	</div>
+	<script type="text/javascript" src='./js/angular.min.js'></script>
+	<script type="text/javascript">
+	var app = angular.module('app',[]);
+	app.directive('hello',function(){
+		return {
+			restrict:'A',//c class a 属性 e template
+			link:function(){
+				alert('我在这里')
+			}
+			//replace:true,//替换我们自定义的directive的名称
+			// template:'<div>hello</div>'
+		}
+	});
+
+	</script>
+</body>
+</html>
