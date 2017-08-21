@@ -6,10 +6,12 @@
 </head>
 <body>
 	<div ng-app="app">
-		<div ng-controller="AppCtrl">
+		<!-- <div ng-controller="AppCtrl">
 			<div enter="loadMoreData()">i am here</div>
 			<div enter="delete()">delete</div>
-		</div>
+		</div> -->
+        <food apple orange banana>anything
+        </food>
 	</div>
 
 
@@ -36,6 +38,7 @@
     app.directive('food',function(){
     	return{
     		restrict:'E',
+            scope:[],
     		controller:function($scope){
     			$scope.foods=[];
     			this.addApple=function(){
@@ -50,7 +53,7 @@
     		},
     	link:function(scope,element,attrs){
     		element.bind('mouseenter',function(){
-    			console.log($scope.foods);
+    			console.log(scope.foods);
     			});
    			}
    		}
@@ -62,7 +65,7 @@
     			foodCtrl.addApple();
     		}
     	}
-    }
+    })
      app.directive('orange',function(){
     	return {
     		require:'food',
@@ -70,7 +73,7 @@
     			foodCtrl.addOrange();
     		}
     	}
-    }
+    })
       app.directive('banana',function(){
     	return {
     		require:'food',
@@ -78,8 +81,8 @@
     			foodCtrl.addBanana();
     		}
     	}
-    }
-    </script>
+    })
+   </script>
 </body>
 
 </html>
