@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ajax基础demo</title>
+</head>
+<body>
+	ajax基础demo
+	<button onclick="testCreateXhr();">创建XHR对象</button>
+	<script type="text/javascript">
+	function testCreateXhr(){
+		var xhr = new XMLHttpRequest();
+		xhr.open('POST','/keyword/hit',true);
+		xhr.setRequestHeader('Content-Type',"application/json");
+		xhr.setRequestHeader('test','value');
+		xhr.send(JSON.stringify({
+			keyword:'c',
+			other:'test'
+		}));
+		xhr.timeout = 5000;
+		xhr.ontimeout = function(){
+			console.log('timeout!');
+		}
+		xhr.onload = function(){
+			if(xhr.status == 200)
+				console.log('load,%s',xhr.responseText);
+		}
+		xhr.onreadystatechange = function(e){
+			if(xhr.readyState ===4 && xhr.status ==200){
+				console.log(xhr.responseText);
+				console.log(xhr.getAllResponeseHeaders());
+				console.log(xhr.getAllResponeseHeader("Content-Type"));
+				console.log(xhr.status);
+				console.log(xhr.statusText);
+
+			}
+		}
+	}
+	</script>
+</body>
+</html>
