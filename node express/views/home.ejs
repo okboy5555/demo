@@ -1,0 +1,21 @@
+<html>
+	<head>
+		<title>123123</title>
+	</head>
+	<body>
+		<p>23333</p>
+		<p>hi <%= name %></p>
+		<p>id:<%= id %></p>
+		<input type="text" id="new-temp-val">
+		<div id="new-temp"></div>
+	</body>
+	<script type="text/javascript" src='/ejs.min.js'></script>
+	<script type="text/javascript">
+	var tmpl = "<p>new temp</p>";
+	var newTempDiv = document.getElementById('new-temp');
+	setTimeout(function(){
+		newTempDiv.innerHTML = ejs.render(tmpl);
+	},2000);
+
+	</script>
+</html>
