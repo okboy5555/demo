@@ -1,0 +1,9 @@
+指令的目的是用来自定义html标签，指令是一种标记，用来告诉html parser
+js版的编译器
+view model交互
+双向绑定，脏值检测（无法稳定下来，超过10次，抛出异常），循环依赖问题
+
+jquery相比angular有什么优势
+jquery核心是Dom query ng核心是一些设计和架构思想 ng内置了一个轻量级的jquery实现，jqueryLite
+
+

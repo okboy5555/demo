@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='new'>
+
+<head>
+    <meta charset="UTF-8">
+    <title>helloangular</title>
+</head>
+
+<body>
+   	<hello></hello>
+
+   	<input type="text" ng-model="greeting.text">
+	<p>{{greeting.text}}</p>
+	<script type="text/javascript" src="./js/angular.min.js"></script>
+    <script type="text/javascript">
+    var app = angular.module('new', []);
+
+    app.directive('hello', function (){
+      return{
+      	restrict:'E',
+      	template:'<div>hi everyone</div>',
+      	replace:true
+      };
+    });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+	<meta charset="UTF-8">
+	<title>search</title>
+</head>
+<body ng-controller="PhoneListCtrl">
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span2">
+				Search:
+					<input type="text" ng-model="query">
+			</div>
+			<div class="span10">
+				<ul class="phones">
+					<li ng-repear="phone in phones|filter:query">
+						{{phone.name}}
+						<p>
+							{{phone.snippet}}
+						</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="./js/angular.min.js"></script>
+	<script type="text/javascript">
+			function PhoneListCtrl($scope){
+				$scope.phones[
+					{
+						"name":"1",
+						"snippet":"111"
+					},
+					{
+						"name":"2",
+						"snippet":"222"
+					},
+					{
+						"name":"3",
+						"snippet":"333"
+					}
+				];
+			}
+
+	</script>
+</body>
+</html>

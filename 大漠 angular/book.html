@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="newbook">
+<head>
+	<meta charset="UTF-8">
+	<title>book</title>
+</head>
+<body>
+	<div ng-controller="book.list">
+		<button add-book-button>ADD BOOK</button>
+		<br/>
+		<ul>
+			<li ng-repeat="book in books">
+				书名:{{book.title}}作者:{{book.author}}
+			</li>
+		</ul>
+	</div>
+	<script type="text/javascript" src="./js/angular.min.js"></script>
+	<script type="text/javascript">
+	var app = angular.module('newbook',[]);
+	app.service("Book",["$rootScope",function($rootScope){
+		var service = {
+			books:[
+				{title:"《第一本书》",author:"第一本书的作者"},
+				{title:"《第二本书》",author:"第二本书的作者"}
+			],
+			addBook:function(book){
+				service.books.push(book);
+				$rootScope.$broadcast("books.update");
+			}
+		};
+		return service;
+	}]);
+	app.controller("book.list",['$scope','Book',function(scope,Book){
+		scope.$on('books.update',function(event){
+			scope.books = Book.books;
+			scope.$apply();
+		});
+		scope.books = Book.books;
+	}]);
+
+	app.directive("addBookButton",['Book',function(Book){
+		return{
+			restrict:'A',
+			link:function(scope,element,attrs){
+				element.bind('click',function(){
+					Book.addBook({title:"使用angular",author:'666作者'});
+				});
+			}
+		};
+	}]);
+	</script>
+</body>
+</html>
