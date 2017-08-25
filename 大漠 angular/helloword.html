@@ -1,32 +1,49 @@
 <!DOCTYPE html>
-<html  ng-app="userApp" lang="en">
+<html ng-app="userApp" lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>angular</title>
+    <meta charset="UTF-8">
+    <title>angular</title>
 </head>
+
 <body>
-	<div ng-controller="HelloAngular">
-		<p>{{greeting.text}},Angular</p>
-	</div>
-	<div ng-controller="ListCtrl">
-		<ul>
-			<li ng-repeat="name in names">
-				{{name}} from {{department}}
-			</li>
-		</ul>
-	</div>
-	<script src="./js/angular.min.js"></script>
-	<script type="text/javascript">
-	var app = angular.module('userApp',[]);
+    <div ng-controller="CommonController">
+        <div ng-controller="Controller1">
+            <p>{{greeting.text}},Angular</p>
+            <button ng-click="test1()">test1</button>
+        </div>
+        <div ng-controller="Controller2">
+            <p>{{greeting.text}},Angular</p>
+            <button ng-click='test2()'>test2</button>
+        </div>
+        <button ng-click="commonFn()">通用</button>
+    </div>
+    <script src="./js/angular.min.js"></script>
+    <script type="text/javascript">
+    var app = angular.module('userApp', []);
 
-	app.controller("HelloAngular",function($scope){
-			$scope.greeting={text:'hello'};
-		})
-	app.controller("ListCtrl",function($scope,$rootScope){
-		$scope.names = ['111','222','333'];
-		$rootScope.department = 'angular';
-	})
-
-	</script>
+    app.controller("CommonController", function($scope) {
+        $scope.commonFn = function(){
+        	alert('这里是通用功能');
+        }
+    })
+    app.controller('Controller1',function($scope){
+    	$scope.greeting={
+    		text:'Hello1'
+    	}
+    	$scope.test1=function(){
+    		alert('test1');
+    	}
+    })
+    app.controller('Controller2',function($scope){
+    	$scope.greeting={
+    		text:'Hello2'
+    	}
+    	$scope.test2=function(){
+    		alert("text2");
+    	}
+    })
+    </script>
 </body>
+
 </html>
