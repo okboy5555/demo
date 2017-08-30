@@ -5,17 +5,20 @@
 	<title>BookStore</title>
 	<link rel="stylesheet" href="./framework/bootstrap.min.css">
 	<script type="text/javascript" src='./framework/angular.min.js'></script>
-	<script type="text/javascript" src="./framework/angular-route.min.js"></script>
+	<!-- <script type="text/javascript" src="./framework/angular-route.min.js"></script> -->
+	<script type="text/javascript" src="./framework/angular-animate.min.js"></script>
 	<script type="text/javascript" src="./js/app.js"></script>
 	<script type="text/javascript" src="./js/controller.js"></script>
 	<script type="text/javascript" src="./js/filters.js"></script>
 	<script type="text/javascript" src="./js/directive.js"></script>
 	<script type="text/javascript" src="./js/service.js"></script>
+	<script type="text/javascript" src="./framework/angular-ui-router.js"></script>
 
 
 	<link rel="stylesheet" href="./css/color.css">
+	<link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
-	<div ng-view></div>
+	<div ui-view class="page {{pageClass}}"></div>
 </body>
 </html>
