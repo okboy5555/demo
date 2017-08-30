@@ -73,6 +73,28 @@ bookStoreDir.directive('greet', function() {
 
 });
 
+// bookStoreDir.directive('expander',function(){
+//     return{
+//         require:"^?according",
+//         restrict:'EA',
+//         replace:true,
+//         transclude:true,
+//         scope:{
+//             title:'=expanderTitle',
+//         },
+//         template:'<div>'+
+//         '<div class=title ng-click="toggle()">{{title}}</div> '
+//         +'<div class="body" ng-show="showMe" ng-transclude>'
+//         +'</div>',
+//         link:function(scope,element,attr,accordingController){
+//             scope.showMe = false;
+//             scope.toggle = function toggle(){
+//                 scope.showMe = !scope.showMe;
+//             }
+//         }
+//     }
+// })
+
 bookStoreDir.directive('expander',function(){
     return{
         require:"^?according",
@@ -89,25 +111,34 @@ bookStoreDir.directive('expander',function(){
         link:function(scope,element,attr,accordingController){
             scope.showMe = false;
             accordingController.addExpander(scope);
-            scope.toggle = function(){
+            scope.toggle = function toggle(){
                 scope.showMe = !scope.showMe;
                 accordingController.gotOpened(scope);
-            }
+            };
         }
     }
-})
+});
 
 bookStoreDir.directive('according',function(){
     return{
         restrict:'EA',
         replace:true,
-        transclude:true,
-        template:'<div ng-transclude></div>',
+        // transclude:true,
+        // template:'<div class="according" ng-transclude></div>',
         controller:function(){
             var expanders = [];
             this.gotOpened = function(selectedExpander){
-                
-            }
+                angular.forEach(expanders,function(data){
+                    if(selectedExpander != data){
+                        data.showMe = false;
+                    }
+                    console.log(data.showMe);
+                });
+            };
+            this.addExpander = function(data){
+                expanders.push(data);
+
+            };
         }
-    }
-})
+    };
+});
