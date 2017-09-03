@@ -1,4 +1,4 @@
-var bookStoreCtrls = angular.module('bookStoreCtrls', []);
+var bookStoreCtrls = angular.module('bookStoreCtrls', ["bookStoreService"]);
 
 bookStoreCtrls.controller('HelloCtrl', ['$scope', function($scope) {
     $scope.greeting = {
@@ -103,3 +103,35 @@ bookStoreCtrls.controller('expanderCtrl',function($scope){
     }];
 });
 
+bookStoreCtrls.controller('httpCtrl',function($scope,$http){
+    $http({
+        method:'GET',
+        url:'js/data.json'
+    }).success(function(data,status,headers,config){
+        console.log("success");
+        console.log(data);
+        $scope.users = data;
+    }).error(function(data,status,header,config){
+        console.log("error");
+    });
+});
+
+bookStoreCtrls.controller('serviceCtrl',function($scope,$timeout,userListService){
+    var timeout;
+    $scope.$watch('username',function(newUserName){
+        if(newUserName){
+            if(timeout){
+                $timeout.cancel(timeout);
+            }
+        }
+        timeout = $timeout(function(){
+            userListService.userList(newUserName)
+            .success(function(data,status){
+                $scope.users = data;
+                console.log(timeout);
+            });
+        },350);
+
+       
+    });
+});

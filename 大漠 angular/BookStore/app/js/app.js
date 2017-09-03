@@ -1,4 +1,4 @@
-var bookStore = angular.module('bookStoreApp', ['bookStoreCtrls', 'ui.router', 'ngAnimate','bookStoreDir']);
+var bookStore = angular.module('bookStoreApp', ['bookStoreCtrls', 'ui.router', 'ngAnimate','bookStoreDir','bookStoreFil']);
 bookStore.config(function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/hello');
     $stateProvider
@@ -48,5 +48,16 @@ bookStore.config(function($stateProvider, $urlRouterProvider) {
             url:'/expander',
             templateUrl:'tpls/expander.html',
             controller:'expanderCtrl'
+        }).state('http',{
+            url:'/http',
+            templateUrl:'tpls/http.html',
+            controller:'httpCtrl'
+        }).state('service',{
+            url:'/service',
+            templateUrl:'tpls/service.html',
+            controller:'serviceCtrl'
+        }).state('filter',{
+            url:'/filter',
+            templateUrl:'tpls/filter.html'
         });
 });
