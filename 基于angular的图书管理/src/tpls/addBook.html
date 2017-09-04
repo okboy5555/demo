@@ -1,0 +1,53 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <div class="panel-title">新增书籍</div>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-12">
+                <form role="form" role="form" class="form-horizontal">
+                    <div class="form-group">
+                        <label for="" class="col-md-2 control-label">书名:</label>
+                        <div class="col-md-10">
+                            <input type="email" placeholder="最多64个字符" ng-model="userInfo.email" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="col-md-2 control-label">类型</label>
+                        <div class="col-md-10">
+                            <select name="" id="" class="form-control">
+                                <option value="">计算机</option>
+                                <option value="">金融</option>
+                                <option value="">哲学</option>
+                                <option value="">高端办公</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="col-md-2 control-label">出版日期</label>
+                        <div class="col-md-10">
+                            <input type="password" class="form-control" placeholder="日期格式YYYY-MM-DD">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="col-md-2 control-label">作者</label>
+                        <div class="col-md-10">
+                            <input type="text" placeholder="最多16个字符" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="col-md-2 control-label">是否有电子书:</label>
+                        <div class="col-md-10">
+                            <input type="checkbox">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-10 col-md-offset-2">
+                            <a ui-sref="booklist({bookType:0})" class="btn btn-success">保存</a>
+                            <a ui-sref="booklist({bookType:0})" class="btn btn-primary">清空表单</a></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
