@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas" width="150" height="150">
+        current stock price: $3.15 +0.15
+    </canvas>
+
+    <!-- <canvas id="clock" width="150" height="150">
+        <img src="images/clock.png" width="150" height="150" alt=""/>
+    </canvas> -->
+    <script>
+        window.onload = function () {
+            function draw() {
+                console.log("in");
+                var canvas = document.getElementById("canvas");
+                if (canvas.getContext) {
+                    var ctx = canvas.getContext('2d');
+
+                    // ctx.beginPath();
+                    // ctx.moveTo(75,50);
+                    // ctx.lineTo(100,75);
+                    // ctx.lineTo(100,25);
+                    // ctx.fill();
+                    //实心三角
+
+                    // ctx.beginPath();
+                    // ctx.arc(75,75,50,0,Math.PI*2,true); // 绘制
+                    // ctx.moveTo(110,75);
+                    // ctx.arc(75,75,35,0,Math.PI,false);   // 口(顺时针)
+                    // ctx.moveTo(65,65);
+                    // ctx.arc(60,65,5,0,Math.PI*2,true);  // 左眼
+                    // ctx.moveTo(95,65);
+                    // ctx.arc(90,65,5,0,Math.PI*2,true);  // 右眼
+                    // ctx.stroke();
+                    //笑脸
+
+                    // ctx.beginPath();
+                    // ctx.moveTo(25,25);
+                    // ctx.lineTo(105,25);
+                    // ctx.lineTo(25,105);
+                    // ctx.fill();
+                    //填充三角形
+
+                    // ctx.beginPath();
+                    // ctx.moveTo(125-0.5,125-0.5);
+                    // ctx.lineTo(125-0.5,45);
+                    // ctx.lineTo(45,125-0.5);
+                    // ctx.closePath();
+                    // ctx.stroke();
+                    //描边三角形
+
+                    // ctx.beginPath();
+                    // ctx.moveTo(75,25);
+                    // ctx.quadraticCurveTo(25,25,25,62.5);
+                    // ctx.quadraticCurveTo(25,100,50,100);
+                    // ctx.quadraticCurveTo(50,120,30,125);
+                    // ctx.quadraticCurveTo(60,120,65,100);
+                    // ctx.quadraticCurveTo(125,100,125,62.5);
+                    // ctx.quadraticCurveTo(125,25,75,25);
+                    // ctx.stroke();
+                    //对话框
+
+                    // ctx.beginPath();
+                    // ctx.moveTo(75, 40);
+                    // ctx.bezierCurveTo(75, 37, 70, 25, 50, 25);
+                    // ctx.bezierCurveTo(20, 25, 20, 62.5, 20, 62.5);
+                    // ctx.bezierCurveTo(20, 80, 40, 102, 75, 120);
+                    // ctx.bezierCurveTo(110, 102, 130, 80, 130, 62.5);
+                    // ctx.bezierCurveTo(130, 62.5, 130, 25, 100, 25);
+                    // ctx.bezierCurveTo(85, 25, 75, 37, 75, 40);
+                    // ctx.fill();
+                    //爱心
+
+                    var rectangle = new Path2D();
+                    rectangle.rect(10,10,50,50);
+                    var circle = new Path2D();
+                    circle.moveTo(125,35);
+                    circle.arc(100,35,25,0,2*Math.PI);
+
+                    ctx.stroke(rectangle);
+                    ctx.fill(circle);
+                } else {
+                    console.log("不支持");
+                }
+            }
+
+           
+            draw();
+        }
+    </script>
+</body>
+
+</html>
